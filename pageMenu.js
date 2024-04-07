@@ -6,7 +6,8 @@ function createPageMenu() {
     const ul = document.createElement('ul');
 
     const links = [
-        { text: 'Home', href: 'index.html' },
+        { text: 'Home', href: '/' },
+        { text: 'Projects', href: 'projects.html' },
         { text: 'README', href: 'README.html' }
     ];
 
