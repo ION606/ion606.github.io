@@ -7,9 +7,9 @@ function createPageMenu() {
 
     const links = [
         { text: 'Home', href: '/' },
-        { text: 'Projects', href: 'projects.html' },
-        { text: 'README', href: 'README.html' },
-        { text: 'Links', href: 'links.html' }
+        { text: 'Projects', href: 'projects' },
+        { text: 'README', href: 'README' },
+        { text: 'Links', href: 'links' }
     ];
 
     links.forEach(link => {
