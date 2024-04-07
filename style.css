@@ -1,0 +1,55 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.content button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #ff00ff;
+    /* Pink color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.content button:hover {
+    background-color: #800080;
+    /* Purple color */
+}
+
+iframe {
+    border: none;
+}
+
+body,
+canvas {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}

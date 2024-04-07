@@ -1,16 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ION606.com</title>
-    <script src="https://gist.github.com/ION606/4aae09270d1b72c2d8196aaf2e59782b.js"></script>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (e) => {
+            const canvas = document.getElementById('matrixCanvas');
+            const context = canvas.getContext('2d');
+
+            let columns;
+            let drops;
+
+            function setup() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                columns = Math.floor(canvas.width / fontSize);
+                drops = [];
+
+                for (let x = 0; x < columns; x++)
+                    drops[x] = 1;
+            }
+
+            window.addEventListener('resize', setup);
+
+            let fontSize = 16;
+
+            const katakana = "アカサタナハマヤラワガザダバパイキシチニヒミリギジヂビピウクスツヌフムユルグズヅブプエケセテネヘメレゲゼデベペオコソトノホモヨロゴゾドボポ";
+            const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const nums = "0123456789";
+            const matrixChars = katakana + latin + nums;
+
+            function draw() {
+                context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                context.fillStyle = '#ff00ff'; // Bright pink color
+                context.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+                    context.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    // Randomly go back to the top
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+                        drops[i] = 0;
+
+                    // Move the drop down
+                    drops[i]++;
+
+                    // Change color over time
+                    context.fillStyle = `rgb(${Math.floor(Math.random() * 205) + 50}, 0, ${Math.floor(Math.random() * 205) + 50})`; // Pink and purple shades
+                }
+            }
+
+            setup(); // Call setup initially to set up canvas and drops
+            setInterval(draw, 33);
+        })
+    </script>
 </head>
 
-<style>
-    
-</style>
 <body>
-    
+    <!-- <iframe width="400" height="320" src="https://lab.lepture.com/github-cards/cards/medium.html?user=ION606&identity=ghcard-ION606-3&client_id=a11a1bda412d928fb39a&client_secret=92b7cf30bc42c49d589a10372c3f9ff3bb310037"></iframe> -->
+
+    <canvas id="matrixCanvas"></canvas>
+    <div class="overlay">
+        <div class="content">
+            <h1>Welcome to my Personal Website!</h1>
+            <p>My (user)name's ION606, feel free to looks at my stuffs</p>
+            <button onclick="window.location.href = 'README.html';">README</button>
+            <button onclick="window.location.href = 'projects.html';">Projects</button>
+        </div>
+    </div>
+
 </body>
+
 </html>
