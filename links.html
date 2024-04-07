@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Effect Background</title>
+    <style>
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 25px !important;
+            height: 25px !important;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px !important;
+        }
+
+        .home-button:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .xxlarge {
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            bottom: -250px;
+            animation-delay: 0s;
+        }
+
+        .xlarge {
+            width: 400px;
+            height: 400px;
+            left: 45%;
+            bottom: -200px;
+            animation-delay: -2s;
+        }
+
+        .large {
+            width: 300px;
+            height: 300px;
+            left: 40%;
+            bottom: -150px;
+            animation-delay: -4s;
+        }
+
+        .mediun {
+            width: 200px;
+            height: 200px;
+            left: 35%;
+            bottom: -100px;
+            animation-delay: -6s;
+        }
+
+        .small {
+            width: 100px;
+            height: 100px;
+            left: 30%;
+            bottom: -50px;
+            animation-delay: -8s;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .ripple-background {
+            position: relative;
+            height: 100%;
+            background-color: #000;
+            /* Consider a dark background for contrast */
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            animation: ripple 15s infinite ease-in-out;
+            box-shadow: 0px 0px 1px 0px #fff;
+            opacity: 0;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .link {
+            background-color: #ffffffc2;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            width: max-content;
+            max-width: 90%;
+        }
+
+        .link:hover {
+            background-color: #e0e0e0;
+            /* Slightly darker background on hover */
+            transform: translateY(-2px);
+            /* Slight lift effect */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 5s ease-in;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 0.75;
+            }
+
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function createRipple() {
+                const rippleContainer = document.querySelector('.ripple-background');
+                const circle = document.createElement('div');
+                circle.classList.add('circle');
+
+                // Random size from 50 to 200px
+                const size = Math.random() * (200 - 50) + 50;
+                circle.style.width = `${size}px`;
+                circle.style.height = `${size}px`;
+
+                // Random position within the container
+                circle.style.left = `${Math.random() * (window.innerWidth - size)}px`;
+                circle.style.top = `${Math.random() * (window.innerHeight - size)}px`;
+
+                // Random color
+                const colors = ['#FF5959', '#FCA130', '#FFE74C', '#8AC926', '#1982C4', '#6A4C93']; // Rainbow colors
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                circle.style.background = color;
+
+                rippleContainer.appendChild(circle);
+
+                // Remove the circle after it finishes animating to avoid DOM clutter
+                setTimeout(() => {
+                    circle.remove();
+                }, 15000); // Matches the animation duration
+            }
+
+            // Create a new ripple every 2 seconds
+            setInterval(createRipple, 2000);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="links-container">
+        <a href="https://github.com/ION606" class="link fade-in">Github</a>
+        <a href="https://www.twitch.tv/ion606" class="link fade-in">Twitch</a>
+        <a href="https://www.buymeacoffee.com/ion606" class="link fade-in">buy me a coffee</a>
+        <a href="https://steamcommunity.com/id/ion606/" class="link fade-in">Steam</a>
+        <a href="/" class="link fade-in home-button">🏠</a>
+    </div>
+    <div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle mediun shade4"></div>
+        <div class="circle small shade5"></div>
+    </div>
+</body>
+
+</html>

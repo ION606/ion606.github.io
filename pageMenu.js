@@ -8,7 +8,8 @@ function createPageMenu() {
     const links = [
         { text: 'Home', href: '/' },
         { text: 'Projects', href: 'projects.html' },
-        { text: 'README', href: 'README.html' }
+        { text: 'README', href: 'README.html' },
+        { text: 'Links', href: 'links.html' }
     ];
 
     links.forEach(link => {
