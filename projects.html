@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ION606.com - Projects</title>
+
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="pageMenu.css">
+    
+    <script src="https://kit.fontawesome.com/728e740903.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="pageMenu.js"></script>
+    <script>
+        let lastScrollTop = 0;
+        let isHovered = false;
+
+        document.addEventListener('DOMContentLoaded', createPageMenu);
+    </script>
+</head>
+
+<body>
+    <h1 class="title">Project Showcase</h1>
+    <div class="container">
+        <div class="project-card" onclick="window.open('https://premid.app/users/358402930191106049', target='_blank')">
+            <div class="project-preview">
+                <img src="https://premid.app/_ipx/loading_lazy,f_webp,s_450x150/images/logo-wordmark-blue.png"
+                    alt="Rich Presence Collection Preview">
+            </div>
+            <div class="project-info">
+                <h2>Rich Presence Collection</h2>
+                <p>Custom rich presences for Discord!</p>
+                <a href="https://premid.app/users/358402930191106049" target="_blank">Visit Website</a>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="window.open('https://streamelements.ion606.com', target='_blank')">
+            <div class="project-preview">
+                <img src="https://github.com/ION-Emotes/plugin/blob/main/loading.gif?raw=true"
+                    alt="Streamelements Emotes Overlay Preview">
+            </div>
+            <div class="project-info">
+                <h2>Streamelements Emotes Overlay</h2>
+                <p>Use Discord emotes on a Streamelements overlay!</p>
+                <a href="https://streamelements.ion606.com" target="_blank">Visit Website</a>
+            </div>
+        </div>
+
+        <div class="project-card" onclick="window.open('https://chat.ion606.com', target='_blank')">
+            <div class="project-preview">
+                <img src="https://github.com/Proto-Chat/chatJS-main/blob/main/client/assets/favicon.png?raw=true"
+                    alt="Online Chat Application Preview">
+            </div>
+            <div class="project-info">
+                <h2>Online Chat Application</h2>
+                <p>My online chat application (it's....it's a Discord clone).</p>
+                <a href="https://chat.ion606.com" target="_blank">Visit Website</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="https://github.com/ION606/" class="github-link" target="_blank"><i class="fa fa-github"></i></a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #291b3e;
+    /* Dark purple background color */
+    color: #eee;
+    /* Light text color */
+}
+
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 30px;
+    color: #b76e79;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.project-card {
+    background-color: #3b2c57;
+    /* Dark purple card background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    padding: 20px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    background-color: #372952;
+}
+
+.project-preview {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.project-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-info {
+    padding-top: 10px;
+}
+
+.project-info h2 {
+    color: #b76e79;
+    /* Light purple color */
+}
+
+.project-info p {
+    color: #ddd;
+}
+
+.project-info a {
+    display: inline-block;
+    background-color: #b76e79;
+    /* Light purple button background */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.project-info a:hover {
+    background-color: #9c4f62;
+    /* Darker purple color on hover */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.github-link {
+    display: inline-block;
+    color: rgb(209, 206, 206);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.github-link i {
+    vertical-align: middle;
+    /* margin-right: 10px; */
+    cursor: pointer;
+    font-size: 72px;
+}
+
+.github-link:hover {
+    color: white;
+    /* Darker purple color on hover */
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        /* width: calc(100% - 40px); */
+        /* Account for margin */
+        margin: 30px 0;
+    }
+}
