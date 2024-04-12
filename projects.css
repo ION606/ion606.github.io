@@ -43,6 +43,7 @@ body {
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    position: relative;
 }
 
 .project-preview img {
@@ -116,5 +117,38 @@ body {
         /* width: calc(100% - 40px); */
         /* Account for margin */
         margin: 30px 0;
+    }
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotate the text diagonally */
+    font-size: 25px;
+    font-weight: bold;
+    color: red !important;
+    filter: none !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 90%;
+    z-index: 999;
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .chatJS-toGrey {
+        /* https://stackoverflow.com/questions/5081690/how-to-gray-out-a-html-element lmao 
+        opacity: 0.5; /* Real browsers * /
+        filter: alpha(opacity = 60); /* MSIE */
+        filter: grayscale(100%);
+    }
+
+    .centered-text {
+        display: block;
+    }
+
+    .chatJS-info {
+        background-color: #808080;
     }
 }
