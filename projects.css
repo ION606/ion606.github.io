@@ -17,19 +17,19 @@ body {
 
 .container {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping onto the next line */
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     margin-top: 50px;
 }
 
 .project-card {
     background-color: #3b2c57;
-    /* Dark purple card background */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     width: 300px;
     padding: 20px;
-    margin: 0 20px;
+    margin: 20px; /* Add margin to create space between cards */
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -109,14 +109,12 @@ body {
 
 @media (max-width: 900px) {
     .container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .project-card {
-        /* width: calc(100% - 40px); */
-        /* Account for margin */
-        margin: 30px 0;
+        margin: 30px;
     }
 }
 
