@@ -1,67 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="ION606.com">
-    <meta property="og:description"
-        content="My personal website!">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/58801387">
-    <meta property="og:url" content="https://ion606.com/">
-    <meta property="og:type" content="website">
+    <title>ION606 - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --secondary: #4f46e5;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
 
-    <title>README - ION606.com</title>
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/58801387" type="image/jpeg">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    <link rel="stylesheet" href="pageMenu.css">
-    <script src="https://gist.github.com/ION606/4aae09270d1b72c2d8196aaf2e59782b.js"></script>
-    <script type="text/javascript" src="pageMenu.js"></script>
+        body {
+            background: linear-gradient(45deg, var(--dark), #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.5s ease forwards;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-card {
+            background: rgba(79, 70, 229, 0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+        }
+
+        .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.stats-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            color: var(--light);
+            transition: color 0.3s ease;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .about-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-list li::before {
+            content: '▹';
+            color: var(--primary);
+        }
+
+        .category-title {
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .support-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .support-buttons img {
+            transition: transform 0.3s ease;
+            height: 50px;
+        }
+
+        .profile-views {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tech-grid {
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            }
+
+            /* Responsive adjustments for About Me section */
+            .about-list li {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-list li::before {
+                content: '';
+            }
+
+            .about-list li::after {
+                content: '▹';
+                color: var(--primary);
+                margin-top: 0.5rem;
+            }
+            
+                .stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-container img {
+        width: 90%; /* Ensures it does not stretch too much */
+        max-width: 400px; /* Prevents excessive scaling on small devices */
+    }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>🌍 Good Timezone! I'm ION606 🚀</h1>
+            <p class="subtitle">A grad student exploring neural networks, data analysis, procedural animation, and system programming.</p>
+        </section>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2>🎨 About Me</h2>
+            <ul class="about-list">
+                <li>🔭 Currently working on <a href="https://github.com/ION606/bluesky-client" target="_blank">my Bluesky client</a> and <a href="https://github.com/ION-WorkoutApp" target="_blank">my workout app</a></li>
+                <li>🌱 Currently studying <strong>neural networks, data analysis, procedural animation, Redis</strong></li>
+                <li>💬 Ask me about <strong>Express.js, web design, or kernel-level operations</strong></li>
+                <li>📫 Reach me at <a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a></li>
+                <li>⚡ Fun fact: <strong>I still enjoy creating with GameMaker Studio 2</strong> for fun side projects</li>
+            </ul>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="section">
+            <h2>🛠️ Technologies & Tools</h2>
+            
+            <h3 class="category-title">Programming Languages</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                    <span>C</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                    <span>C++</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                    <span>C#</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span>Java</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity">
+                    <span>Solidity</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                    <span>Swift</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                    <span>Kotlin</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+                    <span>Dart</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">
+                    <span>Go</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust">
+                    <span>Rust</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby">
+                    <span>Ruby</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                    <span>PHP</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg" alt="Haskell">
+                    <span>Haskell</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg" alt="Erlang">
+                    <span>Erlang</span>
+                </div>
+            </div>
+
+            <h3 class="category-title">Frontend Development</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://github.com/ION606/ION606/assets/58801387/866962dd-ad92-42f6-ba56-be50125f09c6" alt="Bootstrap">
+                    <span>Bootstrap</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                    <span>Vue.js</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+            </div>
+
+            <h3 class="category-title">Backend Development</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg" alt="Django">
+                    <span>Django</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+                    <span>Express.js</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://github.com/ION606/ION606/assets/58801387/880c324c-fc69-403c-8453-1c9630558c7f" alt="Flask">
+                    <span>Flask</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                    <span>FastAPI</span>
+                </div>
+                <div class="tech-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">
+                    <span>GraphQL</span>
+                </div>
+            </div>
+
+            <!-- Other technology sections (Cloud, ML, Database, Tools, Software, Frameworks) -->
+            <!-- Similar structure with appropriate tech cards -->
+
+        </section>
+
+        <!-- Stats Section -->
+        <section class="section">
+    <h2>📊 GitHub Stats</h2>
+    <div class="stats-container">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ion606&layout=compact&theme=tokyonight" alt="Top Languages">
+        <img src="https://github-readme-stats.vercel.app/api?username=ion606&show_icons=true&theme=midnight-purple&hide_border=true" alt="GitHub Stats">
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <h2>📫 Contact Me</h2>
+            <div class="content">
+                <p>📧 <a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a></p>
+                <div class="social-links">
+                    <a href="https://dev.to/ion606" target="_blank"><i class="fab fa-dev"></i></a>
+                    <a href="https://stackoverflow.com/users/13159393/ion606" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                </div>
+                <div class="support-buttons">
+                    <a href="https://www.buymeacoffee.com/ION606" target="_blank">
+                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
+                    </a>
+                    <a href="https://ko-fi.com/ION606" target="_blank">
+                        <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" alt="Ko-fi">
+                    </a>
+                </div>
+                <div class="profile-views">
+                    Number of cute people who have viewed my profile<br>
+                    <img src="https://profile-counter.glitch.me/ion606/count.svg" alt="Profile Views">
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', createPageMenu);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach((section, index) => {
+            observer.observe(section);
+            section.style.animationDelay = `${index * 0.2}s`;
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'scale(1.05)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'scale(1)';
+            });
+        });
+
+        document.querySelectorAll('.tech-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const x = e.pageX - card.offsetLeft;
+                const y = e.pageY - card.offsetTop;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
     </script>
-</head>
-
-<style>
-    body, .gist article {
-        background-color: #0D1117;
-        color: #E6EDF3
-    }
-
-    body {
-        padding-bottom: 20px;
-        padding-top: 20px;
-    }
-
-    .gist article {
-        max-width: 1000px;
-        margin: auto;
-        border-radius: 10px;
-        border: #E6EDF3 solid 1px;
-        /* margin-bottom: 50px; */
-    }
-
-    .gist .gist-file {
-        border:none;
-    }
-    
-    #file-readme-md-readme {
-        background-color: #0D1117;
-        border: none;
-    }
-
-    .gist .markdown-body img {
-        background: none;
-    }
-
-    hr {
-        padding: 10em;
-    }
-</style>
-
-<body style="background-color: #0D1117">
-
 </body>
-
 </html>
