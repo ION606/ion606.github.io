@@ -1,447 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ION606 - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #7c3aed;
-            --secondary: #4f46e5;
-            --dark: #0f172a;
-            --light: #f8fafc;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ION606 - Portfolio</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+		<link rel="stylesheet" href="/README.css" />
+	</head>
+	<body>
+		<!-- dynamic starfield container (appended via js) -->
+		<div id="starfield"></div>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+		<div class="container">
+			<nav>
+				<a href="/">home</a>
+				<a href="/README">readme</a>
+				<a href="/projects">projects</a>
+				<a href="/links">links</a>
+			</nav>
 
-        body {
-            background: linear-gradient(45deg, var(--dark), #1e293b);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+			<section class="hero">
+				<h1>
+					<span style="-webkit-text-fill-color: white">🌍</span> good
+					timezone! I'm ION606
+				</h1>
+				<p
+					class="typing-text"
+					data-text="A grad student exploring neural networks, data analysis, procedural animation, and system programming"></p>
+			</section>
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+			<!-- about section -->
+			<section class="section">
+				<h2>🎨 about me</h2>
+				<ul class="about-list">
+					<li>
+						🔭 currently working on
+						<a
+							href="https://github.com/ION606/bluesky-client"
+							target="_blank"
+							>my bluesky client</a
+						>
+						and
+						<a
+							href="https://github.com/ION-WorkoutApp"
+							target="_blank"
+							>my workout app</a
+						>
+					</li>
+					<li>
+						🌱 currently studying
+						<strong
+							>neural networks, data analysis, procedural
+							animation, redis</strong
+						>
+					</li>
+					<li>
+						💬 ask me about
+						<strong
+							>express.js, web design, or kernel-level
+							operations</strong
+						>
+					</li>
+					<li>
+						📫 reach me at
+						<a href="mailto:ion606@protonmail.com"
+							>ion606@protonmail.com</a
+						>
+					</li>
+					<li>
+						⚡ fun fact:
+						<strong
+							>i still enjoy creating with gamemaker studio
+							2</strong
+						>
+						for fun side projects
+					</li>
+				</ul>
+			</section>
 
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            animation: fadeIn 1s ease-in;
-        }
+			<!-- technologies & tools section -->
+			<section class="section">
+				<h2>🛠️ technologies & tools</h2>
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+				<!-- Programming Languages -->
+				<h3 class="category-title">Programming Languages</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+							alt="C" />
+						<span>c</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+							alt="C++" />
+						<span>c++</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+							alt="C#" />
+						<span>c#</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+							alt="Python" />
+						<span>python</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+							alt="Java" />
+						<span>java</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+							alt="JavaScript" />
+						<span>javascript</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+							alt="TypeScript" />
+						<span>typescript</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg"
+							alt="Solidity" />
+						<span>solidity</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+							alt="Swift" />
+						<span>swift</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+							alt="Kotlin" />
+						<span>kotlin</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+							alt="Dart" />
+						<span>dart</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+							alt="Go" />
+						<span>go</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg"
+							alt="Rust" />
+						<span>rust</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg"
+							alt="Ruby" />
+						<span>ruby</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+							alt="PHP" />
+						<span>php</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg"
+							alt="Haskell" />
+						<span>haskell</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg"
+							alt="Erlang" />
+						<span>erlang</span>
+					</div>
+				</div>
 
-        .section {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: slideUp 0.5s ease forwards;
-        }
+				<!-- Frontend Development -->
+				<h3 class="category-title">Frontend Development</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+							alt="CSS3" />
+						<span>css3</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+							alt="HTML5" />
+						<span>html5</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://github.com/ION606/ION606/assets/58801387/866962dd-ad92-42f6-ba56-be50125f09c6"
+							alt="Bootstrap" />
+						<span>bootstrap</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+							alt="Vue.js" />
+						<span>vue.js</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+							alt="React" />
+						<span>react</span>
+					</div>
+				</div>
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
+				<!-- Backend Development -->
+				<h3 class="category-title">Backend Development</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.16.0/icons/django/django-plain.svg"
+							alt="Django" />
+						<span>django</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+							alt="Express.js" />
+						<span>express.js</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+							alt="Node.js" />
+						<span>node.js</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://github.com/ION606/ION606/assets/58801387/880c324c-fc69-403c-8453-1c9630558c7f"
+							alt="Flask" />
+						<span>flask</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+							alt="FastAPI" />
+						<span>fastapi</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
+							alt="GraphQL" />
+						<span>graphql</span>
+					</div>
+				</div>
 
-        .tech-card {
-            background: rgba(79, 70, 229, 0.1);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+				<!-- Frameworks & Cloud -->
+				<h3 class="category-title">Frameworks & Cloud</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+							alt="Docker" />
+						<span>docker</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+							alt="Kubernetes" />
+						<span>kubernetes</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+							alt="AWS" />
+						<span>aws</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+							alt="Nginx" />
+						<span>nginx</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"
+							alt="Podman" />
+						<span>podman</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+							alt="Vercel" />
+						<span>vercel</span>
+					</div>
+				</div>
 
-        .tech-card:hover {
-            transform: translateY(-5px);
-        }
+				<!-- Machine Learning -->
+				<h3 class="category-title">Machine Learning (ML)</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+							alt="Scikit-learn" />
+						<span>scikit-learn</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg"
+							alt="TensorFlow" />
+						<span>tensorflow</span>
+					</div>
+				</div>
 
-        .tech-card img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 0.5rem;
-            object-fit: contain;
-        }
+				<!-- Database -->
+				<h3 class="category-title">Database</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
+							alt="Firebase" />
+						<span>firebase</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
+							alt="MongoDB" />
+						<span>mongodb</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
+							alt="MSSQL" />
+						<span>mssql</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
+							alt="MySQL" />
+						<span>mysql</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+							alt="PostgreSQL" />
+						<span>postgresql</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+							alt="Redis" />
+						<span>redis</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
+							alt="SQLite" />
+						<span>sqlite</span>
+					</div>
+				</div>
 
-        .stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-}
+				<!-- Tools & APIs -->
+				<h3 class="category-title">Tools & APIs</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+							alt="Git" />
+						<span>git</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+							alt="GitHub" />
+						<span>github</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
+							alt="Selenium" />
+						<span>selenium</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg"
+							alt="Puppeteer" />
+						<span>puppeteer</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+							alt="OpenCV" />
+						<span>opencv</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vagrant/vagrant-original.svg"
+							alt="Vagrant" />
+						<span>vagrant</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg"
+							alt="Gradle" />
+						<span>gradle</span>
+					</div>
+				</div>
 
-.stats-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
+				<!-- Software -->
+				<h3 class="category-title">Software</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+							alt="Arduino" />
+						<span>arduino</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg"
+							alt="Heroku" />
+						<span>heroku</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+							alt="Linux" />
+						<span>linux</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png"
+							alt="Matlab" />
+						<span>matlab</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
+							alt="Raspberry Pi" />
+						<span>raspberry pi</span>
+					</div>
+				</div>
 
-        .social-links a {
-            font-size: 2rem;
-            color: var(--light);
-            transition: color 0.3s ease;
-        }
+				<!-- Frameworks -->
+				<h3 class="category-title">Frameworks</h3>
+				<div class="tech-grid">
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg"
+							alt="DotNet" />
+						<span>dotnet</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg"
+							alt="Electron" />
+						<span>electron</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://github.com/ION606/ION606/assets/58801387/ffeb5f73-1d02-46a4-9595-b21532b6c62d"
+							alt="Next.js" />
+						<span>next.js</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+							alt="React" />
+						<span>react</span>
+					</div>
+					<div class="tech-card">
+						<img
+							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/puppeteer/puppeteer-original.svg"
+							alt="Puppeteer" />
+						<span>puppeteer</span>
+					</div>
+				</div>
+			</section>
 
-        .about-list {
-            list-style: none;
-            padding: 1rem 0;
-        }
+			<!-- github stats section -->
+			<section class="section">
+				<h2>📊 github stats</h2>
+				<div class="stats-container">
+					<div id="top-langs-stat">
+						<img
+							src="https://github-readme-stats.vercel.app/api/top-langs/?username=ion606&layout=compact&theme=tokyonight" />
+					</div>
+					<img
+						src="https://github-readme-stats.vercel.app/api?username=ion606&show_icons=true&theme=midnight-purple&hide_border=true"
+						alt="github stats" />
+				</div>
+			</section>
 
-        .about-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+			<!-- contact section -->
+			<section class="section">
+				<h2>📫 Contact Me</h2>
+				<div class="content">
+					<p>
+						📧
+						<a href="mailto:ion606@protonmail.com"
+							>ion606@protonmail.com</a
+						>
+					</p>
 
-        .about-list li::before {
-            content: '▹';
-            color: var(--primary);
-        }
+					<div class="profile-views">
+						number of cute people who have viewed my profile<br />
+						<img
+							src="https://profile-counter.glitch.me/ion606/count.svg"
+							alt="profile views" />
+					</div>
+				</div>
+			</section>
 
-        .category-title {
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary);
-        }
+			<!-- Connect with Me section from README.md -->
+			<section class="section">
+				<h2>🔗 Connect with Me</h2>
+				<div class="content">
+					<div class="connect-grid">
+						<a href="https://dev.to/ion606" target="_blank">
+							<img
+								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg"
+								alt="Dev.to"
+								height="30"
+								width="40" />
+						</a>
+						<a
+							href="https://stackoverflow.com/users/13159393/ion606"
+							target="_blank">
+							<img
+								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg"
+								alt="Stack Overflow"
+								height="30"
+								width="40" />
+						</a>
+						<a
+							href="https://www.buymeacoffee.com/ION606"
+							target="_blank">
+							<img
+								src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+								height="50"
+								width="210"
+								alt="Buy Me A Coffee" />
+						</a>
+						<a href="https://ko-fi.com/ION606" target="_blank">
+							<img
+								src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
+								height="50"
+								width="210"
+								alt="Ko-fi" />
+						</a>
+					</div>
+				</div>
+			</section>
 
-        .support-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
+			<div id="lol" style="display: none; text-align: center">
+				wouldn't you like to know lol
+			</div>
 
-        .support-buttons img {
-            transition: transform 0.3s ease;
-            height: 50px;
-        }
+			<p class="active-modules">
+				<span id="moduleTitle">active modules:</span> [
+				<span class="module" onclick="createStars()">starfield</span>,
+				<span class="module" onclick="launchUFO()">ufo</span>,
+				<span class="module" onclick="devConsoleToggle()"
+					>developer console</span
+				>,
+				<span class="module" onclick="typewriterEffect()"
+					>typewriter effect</span
+				>,
+				<span class="module" onclick="createParticleEffect()"
+					>particle scroll</span
+				>,
+				<span class="module" onclick="triggerEasterEggsReal()"
+					>easter eggs</span
+				>
+				]
+			</p>
+		</div>
 
-        .profile-views {
-            text-align: center;
-            margin: 2rem 0;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
+		<script>
+			const triggerEasterEggsReal = () => {
+				const lol = document.querySelector("#lol");
+				lol.style.display = "block";
 
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
+				setTimeout(() => {
+					lol.style.display = "none";
+				}, 3000);
+			};
+		</script>
 
-        a:hover {
-            opacity: 0.8;
-        }
+		<!-- hidden developer console -->
+		<div id="dev-console">
+			<input type="text" placeholder="enter command..." />
+		</div>
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-            }
-
-            /* Responsive adjustments for About Me section */
-            .about-list li {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .about-list li::before {
-                content: '';
-            }
-
-            .about-list li::after {
-                content: '▹';
-                color: var(--primary);
-                margin-top: 0.5rem;
-            }
-            
-                .stats-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stats-container img {
-        width: 90%; /* Ensures it does not stretch too much */
-        max-width: 400px; /* Prevents excessive scaling on small devices */
-    }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <section class="hero">
-            <h1>🌍 Good Timezone! I'm ION606 🚀</h1>
-            <p class="subtitle">A grad student exploring neural networks, data analysis, procedural animation, and system programming.</p>
-        </section>
-
-        <!-- About Section -->
-        <section class="section">
-            <h2>🎨 About Me</h2>
-            <ul class="about-list">
-                <li>🔭 Currently working on <a href="https://github.com/ION606/bluesky-client" target="_blank">my Bluesky client</a> and <a href="https://github.com/ION-WorkoutApp" target="_blank">my workout app</a></li>
-                <li>🌱 Currently studying <strong>neural networks, data analysis, procedural animation, Redis</strong></li>
-                <li>💬 Ask me about <strong>Express.js, web design, or kernel-level operations</strong></li>
-                <li>📫 Reach me at <a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a></li>
-                <li>⚡ Fun fact: <strong>I still enjoy creating with GameMaker Studio 2</strong> for fun side projects</li>
-            </ul>
-        </section>
-
-        <!-- Technologies Section -->
-        <section class="section">
-            <h2>🛠️ Technologies & Tools</h2>
-            
-            <h3 class="category-title">Programming Languages</h3>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
-                    <span>C</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
-                    <span>C++</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
-                    <span>C#</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                    <span>Python</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-                    <span>Java</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
-                    <span>TypeScript</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity">
-                    <span>Solidity</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
-                    <span>Swift</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
-                    <span>Kotlin</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
-                    <span>Dart</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">
-                    <span>Go</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust">
-                    <span>Rust</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby">
-                    <span>Ruby</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                    <span>PHP</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg" alt="Haskell">
-                    <span>Haskell</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg" alt="Erlang">
-                    <span>Erlang</span>
-                </div>
-            </div>
-
-            <h3 class="category-title">Frontend Development</h3>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                    <span>CSS3</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                    <span>HTML5</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://github.com/ION606/ION606/assets/58801387/866962dd-ad92-42f6-ba56-be50125f09c6" alt="Bootstrap">
-                    <span>Bootstrap</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
-                    <span>Vue.js</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-                    <span>React</span>
-                </div>
-            </div>
-
-            <h3 class="category-title">Backend Development</h3>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg" alt="Django">
-                    <span>Django</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
-                    <span>Express.js</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-                    <span>Node.js</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://github.com/ION606/ION606/assets/58801387/880c324c-fc69-403c-8453-1c9630558c7f" alt="Flask">
-                    <span>Flask</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
-                    <span>FastAPI</span>
-                </div>
-                <div class="tech-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">
-                    <span>GraphQL</span>
-                </div>
-            </div>
-
-            <!-- Other technology sections (Cloud, ML, Database, Tools, Software, Frameworks) -->
-            <!-- Similar structure with appropriate tech cards -->
-
-        </section>
-
-        <!-- Stats Section -->
-        <section class="section">
-    <h2>📊 GitHub Stats</h2>
-    <div class="stats-container">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ion606&layout=compact&theme=tokyonight" alt="Top Languages">
-        <img src="https://github-readme-stats.vercel.app/api?username=ion606&show_icons=true&theme=midnight-purple&hide_border=true" alt="GitHub Stats">
-    </div>
-</section>
-
-        <!-- Contact Section -->
-        <section class="section">
-            <h2>📫 Contact Me</h2>
-            <div class="content">
-                <p>📧 <a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a></p>
-                <div class="social-links">
-                    <a href="https://dev.to/ion606" target="_blank"><i class="fab fa-dev"></i></a>
-                    <a href="https://stackoverflow.com/users/13159393/ion606" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                </div>
-                <div class="support-buttons">
-                    <a href="https://www.buymeacoffee.com/ION606" target="_blank">
-                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee">
-                    </a>
-                    <a href="https://ko-fi.com/ION606" target="_blank">
-                        <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" alt="Ko-fi">
-                    </a>
-                </div>
-                <div class="profile-views">
-                    Number of cute people who have viewed my profile<br>
-                    <img src="https://profile-counter.glitch.me/ion606/count.svg" alt="Profile Views">
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.section').forEach((section, index) => {
-            observer.observe(section);
-            section.style.animationDelay = `${index * 0.2}s`;
-        });
-
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                link.style.transform = 'scale(1.05)';
-            });
-            link.addEventListener('mouseleave', () => {
-                link.style.transform = 'scale(1)';
-            });
-        });
-
-        document.querySelectorAll('.tech-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const x = e.pageX - card.offsetLeft;
-                const y = e.pageY - card.offsetTop;
-                card.style.setProperty('--x', `${x}px`);
-                card.style.setProperty('--y', `${y}px`);
-            });
-        });
-    </script>
-</body>
+		<script src="/README.js"></script>
+		<script src="/terminal.js"></script>
+	</body>
 </html>
