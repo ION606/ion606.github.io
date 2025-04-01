@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:title" content="ION606.com" />
+		<meta property="og:description" content="My personal website!" />
+		<meta
+			property="og:image"
+			content="https://avatars.githubusercontent.com/u/58801387" />
+		<meta property="og:url" content="https://ion606.com/" />
+		<meta property="og:type" content="website" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="ION606.com">
-    <meta property="og:description" content="My personal website!">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/58801387">
-    <meta property="og:url" content="https://ion606.com/">
-    <meta property="og:type" content="website">
+		<title>Projects - ION606.com</title>
+		<link
+			rel="icon"
+			href="https://avatars.githubusercontent.com/u/58801387"
+			type="image/jpeg" />
 
-    <title>Projects - ION606.com</title>
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/58801387" type="image/jpeg">
+		<link rel="stylesheet" href="projects.css" />
+		<link rel="stylesheet" href="pageMenu.css" />
 
-    <link rel="stylesheet" href="projects.css">
-    <link rel="stylesheet" href="pageMenu.css">
+		<script
+			src="https://kit.fontawesome.com/728e740903.js"
+			crossorigin="anonymous"></script>
+		<script type="text/javascript" src="pageMenu.js"></script>
+		<script>
+			let lastScrollTop = 0;
+			let isHovered = false;
 
-    <script src="https://kit.fontawesome.com/728e740903.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="pageMenu.js"></script>
-    <script>
-        let lastScrollTop = 0;
-        let isHovered = false;
+			document.addEventListener("DOMContentLoaded", createPageMenu);
 
-        document.addEventListener('DOMContentLoaded', createPageMenu);
-    </script>
-</head>
+			function openIfNotBtn(e, url) {
+				if (e.target.href || e.target.classList.contains('noopen')) return;
 
-<body>
-    <h1 class="title">Project Showcase</h1>
-    <div class="container">
-        <!-- <div class="project-card" onclick="window.open('https://premid.app/users/358402930191106049', target='_blank')">
+				window.open(url, (target = "_blank"));
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1 class="title">Project Showcase</h1>
+		<div class="container">
+			<!-- <div class="project-card" onclick="openIfNotBtn(event, 'https://premid.app/users/358402930191106049')">
             <div class="project-preview">
                 <img src="https://premid.app/_ipx/loading_lazy,f_webp,s_450x150/images/logo-wordmark-blue.png"
                     alt="Rich Presence Collection Preview">
@@ -41,85 +53,372 @@
             </div>
         </div> -->
 
-        <div class="project-card" onclick="window.open('https://github.com/ion606/learn', target='_blank')">
-            <div class="project-preview">
-                <img src="https://github.com/ION606/ion606.github.io/blob/main/assets/learning_icon.png?raw=true"
-                    alt="My Notes!">
-            </div>
-            <div class="project-info">
-                <h2>My Notes</h2>
-                <p>Many of my CS notes from uni</p>
-                <a href="https://github.com/ion606/learn" target="_blank">Visit Repo</a>
-            </div>
-        </div>
+			<!-- The ION Language -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://ionlang.ion606.com')">
+				<div class="project-preview">
+					<img
+						src="https://github.com/The-ION-Language/ION-Lang/blob/main/assets/ION_LANG_LOGO.png?raw=true"
+						alt="The ION Language Preview" />
+				</div>
+				<div class="project-info">
+					<h2>The ION Language</h2>
+					<p>My attempt at a custom programming language!</p>
+					<a href="https://ionlang.ion606.com" target="_blank"
+						>Visit Website</a
+					>
+				</div>
+			</div>
 
-        <div class="project-card" onclick="window.open('https://ionlang.ion606.com', target='_blank')">
-            <div class="project-preview">
-                <img src="https://avatars.githubusercontent.com/u/194176806?s=200&v=4"
-                    alt="Streamelements Emotes Overlay Preview">
-            </div>
-            <div class="project-info">
-                <h2>ION Workout App!</h2>
-                <p>An open source workout app!</p>
-                <a href="https://github.com/ION-WorkoutApp" target="_blank">Visit Homepage</a>
-            </div>
-        </div>
+			<!-- Online Chat Application -->
+			<div
+				class="project-card chatJS-info"
+				onclick="openIfNotBtn(event, 'https://chat.ion606.com')">
+				<div class="project-preview">
+					<p class="centered-text">
+						SCREEN MUST BE LARGER THAN 500PX
+					</p>
+					<img
+						class="chatJS-toGrey"
+						src="https://github.com/Proto-Chat/chatJS-main/blob/main/client/assets/favicon.png?raw=true"
+						alt="Online Chat Application Preview" />
+				</div>
+				<div class="project-info chatJS-toGrey">
+					<h2>Online Chat Application</h2>
+					<p>
+						My online chat application (it's....it's a Discord
+						clone).
+					</p>
+					<a href="https://chat.ion606.com" target="_blank"
+						>Visit Website</a
+					>
+				</div>
+			</div>
 
-        <div class="project-card chatJS-info" onclick="window.open('https://chat.ion606.com', target='_blank')">
-            <div class="project-preview">
-                <p class="centered-text">SCREEN MUST BE LARGER THAN 500PX</p>
-                <img class="chatJS-toGrey"
-                    src="https://github.com/Proto-Chat/chatJS-main/blob/main/client/assets/favicon.png?raw=true"
-                    alt="Online Chat Application Preview">
-            </div>
-            <div class="project-info chatJS-toGrey">
-                <h2>Online Chat Application</h2>
-                <p>My online chat application (it's....it's a Discord clone).</p>
-                <a href="https://chat.ion606.com" target="_blank">Visit Website</a>
-            </div>
-        </div>
+			<!-- ION VCS -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/VCS')">
+				<div class="project-preview">
+					<img
+						src="https://github.com/ION606/ion606.github.io/blob/main/assets/vcs_icon.png?raw=true"
+						alt="ION VCS Preview" />
+				</div>
+				<div class="project-info">
+					<h2>ION VCS</h2>
+					<p>
+						A future version control system and file sharing system
+						built around rsync
+					</p>
+					<a href="https://github.com/ION606/VCS" target="_blank"
+						>Visit Website</a
+					>
+				</div>
+			</div>
 
-        <div class="project-card" onclick="window.open('https://github.com/ION606/VCS', target='_blank')">
-            <div class="project-preview">
-                <img src="https://github.com/ION606/ion606.github.io/blob/main/assets/vcs_icon.png?raw=true"
-                    alt="ION VCS Preview">
-            </div>
-            <div class="project-info">
-                <h2>ION VCS</h2>
-                <p>A future version control system and file sharing system built around rsync and inspired by the github
-                    cli</p>
-                <a href="https://github.com/ION606/VCS" target="_blank">Visit Website</a>
-            </div>
-        </div>
+			<!-- ML-pipeline -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/ML-pipeline')">
+				<div class="project-preview">
+					<img
+						src="/assets/ml-pipeline.png"
+						alt="ML-pipeline Preview" />
+				</div>
+				<div class="project-info">
+					<h2>ML-pipeline</h2>
+					<p>
+						Pipeline to integrate searching, model iteration, and
+						code correction with local ollama models
+					</p>
+					<a
+						href="https://github.com/ION606/ML-pipeline"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
 
-        <div class="project-card" onclick="window.open('https://ionlang.ion606.com', target='_blank')">
-            <div class="project-preview">
-                <img src="https://github.com/The-ION-Language/ION-Lang/blob/main/assets/ION_LANG_LOGO.png?raw=true"
-                    alt="Streamelements Emotes Overlay Preview">
-            </div>
-            <div class="project-info">
-                <h2>The ION Language</h2>
-                <p>My attempt at a custom programming language!</p>
-                <a href="https://ionlang.ion606.com" target="_blank">Visit Website</a>
-            </div>
-        </div>
+			<!-- ION Workout App -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://ionlang.ion606.com')">
+				<div class="project-preview">
+					<img
+						src="https://avatars.githubusercontent.com/u/194176806?s=200&v=4"
+						alt="ION Workout App Preview" />
+				</div>
+				<div class="project-info">
+					<h2>ION Workout App!</h2>
+					<p>An open source workout app!</p>
+					<a href="https://workout.ion606.com/" target="_blank"
+						>Visit Website</a
+					>
+				</div>
+			</div>
 
-        <div class="project-card" onclick="window.open('https://streamelements.ion606.com', target='_blank')">
-            <div class="project-preview">
-                <img src="https://github.com/ION-Emotes/plugin/blob/main/loading.gif?raw=true"
-                    alt="Streamelements Emotes Overlay Preview">
-            </div>
-            <div class="project-info">
-                <h2>Streamelements Emotes Overlay</h2>
-                <p>Use Discord emotes on a Streamelements overlay!</p>
-                <a href="https://streamelements.ion606.com" target="_blank">Visit Website</a>
-            </div>
-        </div>
-    </div>
+			<!-- Streamelements Emotes Overlay -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://streamelements.ion606.com')">
+				<div class="project-preview">
+					<img
+						src="https://github.com/ION-Emotes/plugin/blob/main/loading.gif?raw=true"
+						alt="Streamelements Emotes Overlay Preview" />
+				</div>
+				<div class="project-info">
+					<h2>Streamelements Emotes Overlay</h2>
+					<p>Use Discord emotes on a Streamelements overlay!</p>
+					<a href="https://streamelements.ion606.com" target="_blank"
+						>Visit Website</a
+					>
+				</div>
+			</div>
 
-    <footer class="footer">
-        <a href="https://github.com/ION606/" class="github-link" target="_blank"><i class="fa fa-github"></i></a>
-    </footer>
-</body>
+			<!-- MailPocket -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/MailPocket')">
+				<div class="project-preview">
+					<img
+						src="/assets/mailpocket.png"
+						alt="MailPocket Preview" />
+				</div>
+				<div class="project-info">
+					<h2>MailPocket</h2>
+					<p>
+						Lightweight server to collect email form submissions in
+						Go
+					</p>
+					<a
+						href="https://github.com/ION606/MailPocket"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
 
+			<!-- browser-chromium -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/browser-chromium')">
+				<div class="project-preview">
+					<img
+						src="/assets/chromium.png"
+						alt="browser-chromium Preview" />
+				</div>
+				<div class="project-info">
+					<h2>browser-chromium</h2>
+					<p>My custom Electron browser</p>
+					<a
+						href="https://github.com/ION606/browser-chromium"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- static-site-hosting -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/static-site-hosting')">
+				<div class="project-preview">
+					<img
+						src="/assets/static_site_hosting.png"
+						alt="static-site-hosting Preview" />
+				</div>
+				<div class="project-info">
+					<h2>static-site-hosting</h2>
+					<p>Host static websites, effortlessly!</p>
+					<a
+						href="https://github.com/ION606/static-site-hosting"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- ProcGen -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/ProcGen')">
+				<div class="project-preview">
+					<img src="/assets/procgen.png" alt="ProcGen Preview" />
+				</div>
+				<div class="project-info">
+					<h2>ProcGen</h2>
+					<p>A procedural generation project</p>
+					<a href="https://github.com/ION606/ProcGen" target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- bluesky-client -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/bluesky-client')">
+				<div class="project-preview">
+					<img
+						src="/assets/bluesky.png"
+						alt="bluesky-client Preview" />
+				</div>
+				<div class="project-info">
+					<h2>bluesky-client</h2>
+					<p>My Bluesky client</p>
+					<a
+						href="https://github.com/ION606/bluesky-client"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- linkedin-api -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/linkedin-api')">
+				<div class="project-preview">
+					<img
+						src="/assets/linkedin-plus.png"
+						alt="linkedin-api Preview" />
+				</div>
+				<div class="project-info">
+					<h2>Linkedin Api</h2>
+					<p>An actually useful LinkedIn Nodejs package</p>
+					<a
+						href="https://github.com/ION606/linkedin-api"
+						target="_blank"
+						>Visit Repo</a
+					>
+
+					<a
+						href="https://www.npmjs.com/package/linkedin-api-js"
+						target="_blank"
+						class="hasImg"
+						><img alt="NPM Icon" src="/assets/npm.png" class="noopen"
+					/></a>
+				</div>
+			</div>
+
+			<!-- github-to-fs -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/github-to-fs')">
+				<div class="project-preview">
+					<img
+						src="/assets/gh-to-fs.png"
+						alt="github-to-fs Preview" />
+				</div>
+				<div class="project-info">
+					<h2>github-to-fs</h2>
+					<p>Interact with GitHub API like the fs module</p>
+					<a
+						href="https://github.com/ION606/github-to-fs"
+						target="_blank"
+						>Visit Repo</a
+					>
+
+					<a
+						href="https://www.npmjs.com/package/github-to-fs"
+						target="_blank"
+						class="hasImg"
+						><img alt="NPM Icon" src="/assets/npm.png" class="noopen"
+					/></a>
+				</div>
+			</div>
+
+			<!-- youtube-music-meta-extract -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/youtube-music-meta-extract')">
+				<div class="project-preview">
+					<img
+						src="/assets/youtube-meta.png"
+						alt="youtube-music-meta-extract Preview" />
+				</div>
+				<div class="project-info">
+					<h2>YouTube Music Meta Extractor</h2>
+					<p>
+						A simple project for processing and analyzing YouTube
+						Music data. Includes tools for metadata extraction,
+						audio analysis, and visualization.
+					</p>
+					<a
+						href="https://github.com/ION606/youtube-music-meta-extract"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- web-to-fish -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/web-to-fish')">
+				<div class="project-preview">
+					<img
+						src="/assets/web-to-fish.png"
+						alt="web-to-fish Preview" />
+				</div>
+				<div class="project-info">
+					<h2>web-to-fish</h2>
+					<p>Takes input from browser and pipes it into fish</p>
+					<a
+						href="https://github.com/ION606/web-to-fish"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- commit_grabber -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ION606/commit_grabber')">
+				<div class="project-preview">
+					<img
+						src="/assets/github-commit-grabber.png"
+						alt="commit_grabber Preview" />
+				</div>
+				<div class="project-info">
+					<h2>Commit Grabber</h2>
+					<p>Yoinks your github commits for you!</p>
+					<a
+						href="https://github.com/ION606/commit_grabber"
+						target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+
+			<!-- My Notes -->
+			<div
+				class="project-card"
+				onclick="openIfNotBtn(event, 'https://github.com/ion606/learn')">
+				<div class="project-preview">
+					<img
+						src="https://github.com/ION606/ion606.github.io/blob/main/assets/learning_icon.png?raw=true"
+						alt="My Notes!" />
+				</div>
+				<div class="project-info">
+					<h2>My Notes</h2>
+					<p>Many of my CS notes from uni</p>
+					<a href="https://github.com/ion606/learn" target="_blank"
+						>Visit Repo</a
+					>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<a
+				href="https://github.com/ION606/"
+				class="github-link"
+				target="_blank"
+				><i class="fa fa-github"></i
+			></a>
+		</footer>
+	</body>
 </html>

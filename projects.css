@@ -1,152 +1,168 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #291b3e;
-    /* Dark purple background color */
-    color: #eee;
-    /* Light text color */
+	font-family: Arial, sans-serif;
+	background-color: #291b3e;
+	/* Dark purple background color */
+	color: #eee;
+	/* Light text color */
 }
 
 
 .title {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 30px;
-    color: #b76e79;
-    transition: background-color 0.3s ease;
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 30px;
+	color: #b76e79;
+	transition: background-color 0.3s ease;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping onto the next line */
-    justify-content: space-around;
-    align-items: flex-start; /* Align items to the top */
-    margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	/* Allow wrapping onto the next line */
+	justify-content: space-around;
+	align-items: flex-start;
+	/* Align items to the top */
+	margin-top: 50px;
 }
 
 .project-card {
-    background-color: #3b2c57;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 300px;
-    padding: 20px;
-    margin: 20px; /* Add margin to create space between cards */
-    transition: transform 0.3s ease;
-    cursor: pointer;
+	background-color: #3b2c57;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	width: 300px;
+	padding: 20px;
+	margin: 20px;
+	/* Add margin to create space between cards */
+	transition: transform 0.3s ease;
+	cursor: pointer;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    background-color: #372952;
+	transform: scale(1.05);
+	background-color: #372952;
 }
 
 .project-preview {
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: relative;
+	overflow: hidden;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	position: relative;
 }
 
 .project-preview img {
-    width: 100%;
-    height: auto;
-    display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 .project-info {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 .project-info h2 {
-    color: #b76e79;
-    /* Light purple color */
+	color: #b76e79;
+	/* Light purple color */
 }
 
 .project-info p {
-    color: #ddd;
+	color: #ddd;
 }
 
 .project-info a {
-    display: inline-block;
-    background-color: #b76e79;
-    /* Light purple button background */
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 10px;
+	display: inline-block;
+	background-color: #b76e79;
+	/* Light purple button background */
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.project-info a.hasImg {
+	background-color: black;
+}
+
+.project-info a.hasImg:hover {
+	background-color: darkgrey;
+}
+
+.project-info img {
+	height: 1em;
 }
 
 .project-info a:hover {
-    background-color: #9c4f62;
-    /* Darker purple color on hover */
+	background-color: #9c4f62;
+	/* Darker purple color on hover */
 }
 
 .footer {
-    text-align: center;
-    margin-top: 20px;
+	text-align: center;
+	margin-top: 20px;
 }
 
 .github-link {
-    display: inline-block;
-    color: rgb(209, 206, 206);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+	display: inline-block;
+	color: rgb(209, 206, 206);
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 10px;
 }
 
 .github-link i {
-    vertical-align: middle;
-    /* margin-right: 10px; */
-    cursor: pointer;
-    font-size: 72px;
+	vertical-align: middle;
+	/* margin-right: 10px; */
+	cursor: pointer;
+	font-size: 72px;
 }
 
 .github-link:hover {
-    color: white;
-    /* Darker purple color on hover */
+	color: white;
+	/* Darker purple color on hover */
 }
 
 
 @media (max-width: 900px) {
-    .container {
-        flex-direction: row;
-        justify-content: center;
-    }
+	.container {
+		flex-direction: row;
+		justify-content: center;
+	}
 
-    .project-card {
-        margin: 30px;
-    }
+	.project-card {
+		margin: 30px;
+	}
 }
 
 .centered-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg); /* Rotate the text diagonally */
-    font-size: 25px;
-    font-weight: bold;
-    color: red !important;
-    filter: none !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    width: 90%;
-    z-index: 999;
-    display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	/* Rotate the text diagonally */
+	font-size: 25px;
+	font-weight: bold;
+	color: red !important;
+	filter: none !important;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	width: 90%;
+	z-index: 999;
+	display: none;
 }
 
 @media (max-width: 500px) {
-    .chatJS-toGrey {
-        /* https://stackoverflow.com/questions/5081690/how-to-gray-out-a-html-element lmao 
+	.chatJS-toGrey {
+		/* https://stackoverflow.com/questions/5081690/how-to-gray-out-a-html-element lmao 
         opacity: 0.5; /* Real browsers * /
         filter: alpha(opacity = 60); /* MSIE */
-        filter: grayscale(100%);
-    }
+		filter: grayscale(100%);
+	}
 
-    .centered-text {
-        display: block;
-    }
+	.centered-text {
+		display: block;
+	}
 
-    .chatJS-info {
-        background-color: #808080;
-    }
+	.chatJS-info {
+		background-color: #808080;
+	}
 }
