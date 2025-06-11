@@ -7,7 +7,30 @@
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-		<link rel="stylesheet" href="/README.css" />
+		<link rel="stylesheet" href="/CSS/README.css" />
+
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+		<!-- load pixi.js first -->
+		<script src="https://cdn.jsdelivr.net/npm/pixi.js/dist/browser/pixi.min.js"></script>
+
+		<!-- then load the UMD bundle of pixi-filters -->
+		<script src="https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/browser/pixi-filters.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/pixi.js-legacy/dist/pixi-legacy.min.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const loadScript = (src) => {
+					const script = document.createElement("script");
+					script.src = src;
+					document.head.appendChild(script);
+				};
+
+				loadScript("/JS/README.js");
+				loadScript("/JS/glitch.js");
+				loadScript("/JS/terminal.js");
+			});
+		</script>
 	</head>
 	<body>
 		<!-- dynamic starfield container (appended via js) -->
@@ -604,8 +627,5 @@
 		<div id="dev-console">
 			<input type="text" placeholder="enter command..." />
 		</div>
-
-		<script src="/README.js"></script>
-		<script src="/terminal.js"></script>
 	</body>
 </html>

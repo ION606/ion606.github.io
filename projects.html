@@ -17,13 +17,13 @@
 			href="https://avatars.githubusercontent.com/u/58801387"
 			type="image/jpeg" />
 
-		<link rel="stylesheet" href="projects.css" />
-		<link rel="stylesheet" href="pageMenu.css" />
+		<link rel="stylesheet" href="/CSS/projects.css" />
+		<link rel="stylesheet" href="/CSS/pageMenu.css" />
 
 		<script
 			src="https://kit.fontawesome.com/728e740903.js"
 			crossorigin="anonymous"></script>
-		<script type="text/javascript" src="pageMenu.js"></script>
+		<script type="text/javascript" src="/JS/pageMenu.js"></script>
 		<script>
 			let lastScrollTop = 0;
 			let isHovered = false;
@@ -31,7 +31,8 @@
 			document.addEventListener("DOMContentLoaded", createPageMenu);
 
 			function openIfNotBtn(e, url) {
-				if (e.target.href || e.target.classList.contains('noopen')) return;
+				if (e.target.href || e.target.classList.contains("noopen"))
+					return;
 
 				window.open(url, (target = "_blank"));
 			}
@@ -297,7 +298,10 @@
 						href="https://www.npmjs.com/package/linkedin-api-js"
 						target="_blank"
 						class="hasImg"
-						><img alt="NPM Icon" src="/assets/npm.png" class="noopen"
+						><img
+							alt="NPM Icon"
+							src="/assets/npm.png"
+							class="noopen"
 					/></a>
 				</div>
 			</div>
@@ -324,7 +328,10 @@
 						href="https://www.npmjs.com/package/github-to-fs"
 						target="_blank"
 						class="hasImg"
-						><img alt="NPM Icon" src="/assets/npm.png" class="noopen"
+						><img
+							alt="NPM Icon"
+							src="/assets/npm.png"
+							class="noopen"
 					/></a>
 				</div>
 			</div>

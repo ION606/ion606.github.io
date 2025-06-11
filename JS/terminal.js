@@ -1,3 +1,27 @@
+const projectLinks = {
+	"bluesky-client": "https://github.com/ION606/bluesky-client",
+	"workout-app": "https://workout.ion606.com/",
+	"AI-overlord": "https://github.com/ION606/AI-overlord",
+	"black-hole-sim": "https://github.com/ION606/black-hole-sim",
+	"chatjs-main": "https://github.com/Proto-Chat/chatJS-main",
+	"custom_discordjs": "https://github.com/ION606/custom_discordjs",
+	"learn": "https://github.com/ION606/learn",
+	"ion-lang": "https://github.com/The-ION-Language/ION-Lang",
+	"vcs": "https://github.com/ION606/VCS",
+	"ml-pipeline": "https://github.com/ION606/ML-pipeline",
+	"browser-chromium": "https://github.com/ION606/browser-chromium",
+	"static-site-hosting": "https://github.com/ION606/static-site-hosting",
+	"procgen": "https://github.com/ION606/ProcGen",
+	"linkedin-api": "https://github.com/ION606/linkedin-api",
+	"github-to-fs": "https://github.com/ION606/github-to-fs",
+	"web-to-fish": "https://github.com/ION606/web-to-fish",
+	"commit_grabber": "https://github.com/ION606/commit_grabber",
+	"youtube-music-meta-extract": "https://github.com/ION606/youtube-music-meta-extract",
+	"mailpocket": "https://github.com/ION606/MailPocket",
+};
+
+const glitchText = 'T̵̙̻̭̤̺̱̥̖̤̭̗̜͓̓̈́̏͋̔̕̚͠h̴ͽ̳͎̳̱̘̎͛͆̓̐͑͛̈́̕̕͝͝é̷̛̮̥̲͇̊̅͋̏̊̅͊͝͝ ̵̡̛̪̮̦̘̘̼̼̺̪̪̋͋̀̌̇̉̋͌̾̿̓͝͝V̶̡̨̧̨̟̙̻͓̪͇̻̞̥͑̎͋͗̿́̓̌͒͊̈́́̚͠ơ̴̛̱̞̾̎̒̋̾̔̈́̓͑̋̉ȋ̴̡̛͔̙̘̝̙̬̠̹̙̻͖̽̿̓̑̈́͋́̐̕͠d̷̲̲̘̈́̑́̿̆̓̔͋́̓̋̅̏̚';
+
 // secret developer console toggle (using backtick key)
 const devConsoleToggle = () => {
 	const devConsole = document.querySelector("#dev-console");
@@ -46,7 +70,7 @@ class TerminalFS {
 						if (!cmdContent) {
 							consoleOutput.innerHTML += `<div class="consolerrdiv">🚨 Unknown command: \`${cmd}\`</div>`;
 						} else if (cmdContent != true) {
-							consoleOutput.innerHTML += cmdContent;
+							consoleOutput.innerHTML += `<div>${cmdContent}</div>`;
 						}
 					}
 				}
@@ -97,12 +121,7 @@ class TerminalFS {
 			},
 			"/projects": {
 				type: "dir",
-				children: [
-					"bluesky-client",
-					"workout-app",
-					"AI-overlord",
-					"black-hole-sim",
-				],
+				children: Object.keys(projectLinks),
 			},
 			"/fun": {
 				type: "dir",
@@ -120,59 +139,115 @@ class TerminalFS {
 
 		this.files = {
 			"/home/ion606/todo.txt": `
-		  1. Take over the world
-		  2. Make coffee ☕
-		  3. Fix CSS in production
-		  4. ????
-		  5. PROFIT!
-		`,
-			"/fun/joke.txt": `
-		  Why do Java developers wear glasses?
-		  Because they can't C#! 
-		  
-		  (•_•)
-		  ( •_•)>⌐■-■
-		  (⌐■_■)
-		`,
-			"/etc/motd": `
-		  WARNING: This system is powered by ✨imagination✨
-		  Unauthorized access will result in T̵̙̻̭̤̺̱̥̖̤̭̗̜͓͎̓̈́̏͋̔̕̚͠h̴̳͎̳̱̘̽̎͛͆̓̐͑͛̈́̕̕͝͝é̷̛̮̥̲͇̊̅͋̏̊̅͊͝͝ ̵̡̛̪̮̦̘̘̼̼̺̪̪̋͋̀̌̇̉̋͌̾̿̓͝͝V̶̡̨̧̨̟̙̻͓̪͇̻̞̥͑̎͋͗̿́̓̌͒͊̈́́̚͠ơ̴̛̱̞̾̎̒̋̾̔̈́̓͑̋̉ȋ̴̡̛̙̘̝̙̬̠̹̙̻͖̔̽̿̓͑̈́͋́̐̕͠d̷̲̲̘̈́̑́̿̆̓̔͋́̓̋̅̏̚
-		`,
+1. Take over the world
+2. Make coffee ☕
+3. Fix CSS in production
+4. ????
+5. PROFIT!
+`,
+			"/home/ion606/resume.txt": `
+ION606 - Resume
+
+Skills:
+- Programming: C, C++, Python, JavaScript, TypeScript, Rust, Go, Java, etc.
+- Web: HTML, CSS, React, Vue, Express.js, Node.js, Flask, FastAPI
+- ML: TensorFlow, scikit-learn
+- Databases: MongoDB, PostgreSQL, MySQL, SQLite, Redis
+- Tools: Git, Docker, Kubernetes, Vagrant, Electron, Next.js
+
+Contact: ion606@protonmail.com
+`,
 			"/home/ion606/.secret_config": `
-		  [disco_settings]
-		  sparkle_level=9001
-		  rainbow_mode=enabled
-		  pink_nodders: online
-		`,
-			"/fun/uwu.md": `
-		  # Nya~ Welcome to my secret docs! 
-  
-		  (´• ω •\`)ﾉ Here's some important stuff:
-		  - Pet all the cats 🐈
-		  - Drink more water 💧
-		  - Remember to uwu-ify your code
-		`,
-			"/etc/joke_of_the_day": `
-		  Why do programmers prefer dark mode?
-		  Because light attracts bugs! 🐛
-		  
-		  How many programmers does it take to change a light bulb?
-		  None, that's a hardware problem!
-		`,
+[disco_settings]
+sparkle_level=9001
+rainbow_mode=enabled
+pink_nodders: online
+`,
 			"/home/ion606/diary.md": `
-		  Dear Diary,
-		  
-		  Today I discovered the Konami code activates a UFO.
-		  Also, typing "make me a sandwich" works sometimes...
-		  Note to self: Buy more coffee.
-		`,
-			"/home/ion606/resume": document
-				.querySelector("html")
-				.outerHTML.replace(/&/g, "&amp;")
-				.replace(/</g, "&lt;")
-				.replace(/>/g, "&gt;")
-				.replace(/"/g, "&quot;")
-				.replace(/'/g, "&#039;"),
+Dear Diary,
+
+Today I discovered the Konami code activates a UFO.
+Also, typing "make me a sandwich" works sometimes...
+Note to self: Buy more coffee.
+`,
+			"/fun/joke.txt": `
+Why do Java developers wear glasses?
+Because they can't C#! 
+
+(•_•)
+( •_•)>⌐■-■
+(⌐■_■)
+`,
+			"/fun/konami.seq": `
+↑ ↑ ↓ ↓ ← → ← → B A
+
+Hint: Try entering this sequence on the main page!
+`,
+			"/fun/uwu.md": `
+# Nya~ Welcome to my secret docs! 
+
+(´• ω •\`)ﾉ Here's some important stuff:
+- Pet all the cats 🐈
+- Drink more water 💧
+- Remember to uwu-ify your code
+`,
+			"/fun/hackerman.gif": `
+[Imagine a cool ASCII art of Hackerman here!]
+You are now... HACKERMAN.
+`,
+			"/projects/bluesky-client": `
+bluesky-client
+
+My Bluesky client. See: https://github.com/ION606/bluesky-client
+`,
+			"/projects/workout-app": `
+ION Workout App
+
+An open source workout app! See: https://workout.ion606.com/
+`,
+			"/projects/AI-overlord": `
+AI Overlord
+
+A project to automate everything (and maybe take over the world).
+`,
+			"/projects/black-hole-sim": `
+Black Hole Simulator
+
+A physics simulation of black holes and gravitational lensing.
+`,
+			"/projects/virus.exe": `
+VIRUS.EXE
+
+WARNING: This file is highly suspicious. Running it may cause unexpected behavior!
+`,
+			"/etc/motd": `
+WARNING: This system is powered by ✨imagination✨
+Unauthorized access will result in ${glitchText}
+`,
+			"/etc/syslog": `
+[INFO] System booted successfully.
+[INFO] User 'ion606' logged in.
+[WARN] Too much imagination detected.
+[INFO] All systems nominal.
+`,
+			"/etc/joke_of_the_day": `
+Why do programmers prefer dark mode?
+Because light attracts bugs! 🐛
+
+How many programmers does it take to change a light bulb?
+None, that's a hardware problem!
+`,
+			"/sys/self-destruct.exe": `
+*** WARNING ***
+You have attempted to access the self-destruct sequence.
+This feature is disabled for your safety.
+`,
+			"/sys/disco-bootloader": `
+Disco Bootloader v1.0
+
+Initializing disco mode...
+Boot sequence: 🕺💃🪩
+`,
 		};
 	}
 
@@ -257,15 +332,28 @@ class TerminalFS {
 					"404: Humor not found... just kidding!",
 					"This file is in another castle! 🍄",
 				];
-				return (
-					`${jokes[Math.floor(Math.random() * jokes.length)]}\n` +
-					`        ╚═(███)═╝\n` +
-					`        ╚═(███)═╝\n` +
-					`        ╚═(███)═╝\n` +
-					`        ██╚═╝██\n` +
-					`        ███████\n` +
-					`        ███████`
-				);
+				const asciiArts = [
+					`
+<pre>
+         .--.
+        |o_o |
+        |:_/ |
+       //   \\ \\
+      (|     | )
+     /'\\_   _/\\\`
+     \\___)=(___/
+</pre>
+`,
+					`
+<pre>
+      (╯°□°)╯︵ ┻━┻
+</pre>
+`
+				];
+
+				const joke = jokes[Math.floor(Math.random() * jokes.length)],
+					art = asciiArts[Math.floor(Math.random() * asciiArts.length)];
+				return `<div style="color:#ff4081">${joke}</div>${art}`;
 			}
 
 			return `<pre>${this.files[absPath].trim()}</pre>`;
@@ -284,6 +372,7 @@ class TerminalFS {
             <li><strong>starfield</strong> - Regenerate stars</li>
             <li><strong>random</strong> - Activate random color chaos!</li>
             <li><strong>secret</strong> - Activate disco mode!</li>
+            <li><strong>run [file]</strong> - Run a file (e.g., .exe)</li>
         </ul>`,
 
 		exit: devConsoleToggle,
@@ -341,6 +430,38 @@ class TerminalFS {
 		secret: () => {
 			document.body.classList.toggle("disco-mode");
 			return "🎆 Disco mode activated!";
+		},
+
+		run: (filePath) => {
+			const absPath = terminalFS.resolvePath(filePath.trim());
+			console.log(absPath, filePath);
+
+			// Project links
+			if (
+				absPath.startsWith("/projects/") &&
+				projectLinks[filePath.replace("/projects/", "")]
+			) {
+				window.open(projectLinks[filePath], "_blank");
+				return `<span style="color: #7c3aed">🚀 Opening project: ${projectLinks[filePath]}</span>`;
+			}
+
+			// Multi-stage "virus.exe"
+			if (absPath === "/projects/virus.exe") {
+				triggerVirus()
+				setTimeout(1000, () => {
+					const el = document.querySelector('.consoleout').lastChild;
+					el.textContent = glitchText;
+				})
+				return "Error running "
+			}
+
+			if (absPath === "/sys/self-destruct.exe") {
+				return `<span style="color: red; font-weight: bold;">💥 Self-destruct is disabled for your safety.</span>`;
+			}
+			if (absPath.endsWith(".exe")) {
+				return `<span style="color: orange;">🛑 Cannot execute: ${filePath}</span>`;
+			}
+			return `<span style="color: gray;">Nothing to run for: ${filePath}</span>`;
 		},
 	};
 }

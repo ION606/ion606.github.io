@@ -169,38 +169,36 @@ const observer = new IntersectionObserver(
 	{ threshold: 0.1 }
 );
 
-document.addEventListener("DOMContentLoaded", () => {
-	document.querySelectorAll(".section").forEach((section, index) => {
-		observer.observe(section);
-		section.style.animationDelay = `${index * 0.2}s`;
-	});
-
-	createStarfield();
-	typewriterEffect();
-	particleEffectOnScroll();
-
-	let hovered = false;
-	const modTitle = document.querySelector("#moduleTitle"),
-		modules = modTitle.parentElement.querySelectorAll(".module");
-
-	modules.forEach((el) => {
-		el.addEventListener("mouseenter", () => el.classList.add("hovered"));
-		el.addEventListener("mouseleave", () => el.classList.remove("hovered"));
-	});
-
-	modTitle.addEventListener("mouseenter", async () => {
-		if (hovered) return;
-		hovered = true;
-
-		for (const el of modules) {
-			el.classList.add("hovered");
-
-			// anim is .2 seconds
-			setTimeout(() => el.classList.remove("hovered"), 200);
-
-			await new Promise((resolve) => setTimeout(resolve, 100));
-		}
-	});
-
-	modTitle.addEventListener("mouseleave", () => (hovered = false));
+document.querySelectorAll(".section").forEach((section, index) => {
+	observer.observe(section);
+	section.style.animationDelay = `${index * 0.2}s`;
 });
+
+createStarfield();
+typewriterEffect();
+particleEffectOnScroll();
+
+let hovered = false;
+const modTitle = document.querySelector("#moduleTitle"),
+	modules = modTitle.parentElement.querySelectorAll(".module");
+
+modules.forEach((el) => {
+	el.addEventListener("mouseenter", () => el.classList.add("hovered"));
+	el.addEventListener("mouseleave", () => el.classList.remove("hovered"));
+});
+
+modTitle.addEventListener("mouseenter", async () => {
+	if (hovered) return;
+	hovered = true;
+
+	for (const el of modules) {
+		el.classList.add("hovered");
+
+		// anim is .2 seconds
+		setTimeout(() => el.classList.remove("hovered"), 200);
+
+		await new Promise((resolve) => setTimeout(resolve, 100));
+	}
+});
+
+modTitle.addEventListener("mouseleave", () => (hovered = false));

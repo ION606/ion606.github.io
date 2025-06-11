@@ -1,70 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:title" content="ION606.com" />
+		<meta property="og:description" content="My personal website!" />
+		<meta
+			property="og:image"
+			content="https://avatars.githubusercontent.com/u/58801387" />
+		<meta property="og:url" content="https://ion606.com/" />
+		<meta property="og:type" content="website" />
+		<title>Links - ION606.com</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="ION606.com">
-    <meta property="og:description"
-        content="My personal website!">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/58801387">
-    <meta property="og:url" content="https://ion606.com/">
-    <meta property="og:type" content="website">
-    <title>Links - ION606.com</title>
+		<link rel="stylesheet" href="/CSS/links.css" />
 
-    <link rel="stylesheet" href="links.css">
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				function createRipple() {
+					const rippleContainer =
+						document.querySelector(".ripple-background");
+					const circle = document.createElement("div");
+					circle.classList.add("circle");
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function createRipple() {
-                const rippleContainer = document.querySelector('.ripple-background');
-                const circle = document.createElement('div');
-                circle.classList.add('circle');
+					// Random size from 50 to 200px
+					const size = Math.random() * (200 - 50) + 50;
+					circle.style.width = `${size}px`;
+					circle.style.height = `${size}px`;
 
-                // Random size from 50 to 200px
-                const size = Math.random() * (200 - 50) + 50;
-                circle.style.width = `${size}px`;
-                circle.style.height = `${size}px`;
+					// Random position within the container
+					circle.style.left = `${
+						Math.random() * (window.innerWidth - size)
+					}px`;
+					circle.style.top = `${
+						Math.random() * (window.innerHeight - size)
+					}px`;
 
-                // Random position within the container
-                circle.style.left = `${Math.random() * (window.innerWidth - size)}px`;
-                circle.style.top = `${Math.random() * (window.innerHeight - size)}px`;
+					// Random color
+					const colors = [
+						"#FF5959",
+						"#FCA130",
+						"#FFE74C",
+						"#8AC926",
+						"#1982C4",
+						"#6A4C93",
+					]; // Rainbow colors
+					const color =
+						colors[Math.floor(Math.random() * colors.length)];
+					circle.style.background = color;
 
-                // Random color
-                const colors = ['#FF5959', '#FCA130', '#FFE74C', '#8AC926', '#1982C4', '#6A4C93']; // Rainbow colors
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                circle.style.background = color;
+					rippleContainer.appendChild(circle);
 
-                rippleContainer.appendChild(circle);
+					// Remove the circle after it finishes animating to avoid DOM clutter
+					setTimeout(() => {
+						circle.remove();
+					}, 15000); // Matches the animation duration
+				}
 
-                // Remove the circle after it finishes animating to avoid DOM clutter
-                setTimeout(() => {
-                    circle.remove();
-                }, 15000); // Matches the animation duration
-            }
+				// Create a new ripple every 2 seconds
+				setInterval(createRipple, 2000);
+			});
+		</script>
+	</head>
 
-            // Create a new ripple every 2 seconds
-            setInterval(createRipple, 2000);
-        });
-    </script>
-
-</head>
-
-<body>
-    <div class="links-container">
-        <a href="https://github.com/ION606" class="link fade-in">Github</a>
-        <a href="https://www.twitch.tv/ion606" class="link fade-in">Twitch</a>
-        <a href="https://www.buymeacoffee.com/ion606" class="link fade-in">buy me a coffee</a>
-        <a href="https://steamcommunity.com/id/ion606/" class="link fade-in">Steam</a>
-        <a href="/" class="link fade-in home-button">🏠</a>
-    </div>
-    <div class="ripple-background">
-        <div class="circle xxlarge shade1"></div>
-        <div class="circle xlarge shade2"></div>
-        <div class="circle large shade3"></div>
-        <div class="circle mediun shade4"></div>
-        <div class="circle small shade5"></div>
-    </div>
-</body>
-
+	<body>
+		<div class="links-container">
+			<a href="https://github.com/ION606" class="link fade-in">Github</a>
+			<a href="https://www.twitch.tv/ion606" class="link fade-in"
+				>Twitch</a
+			>
+			<a href="https://www.buymeacoffee.com/ion606" class="link fade-in"
+				>buy me a coffee</a
+			>
+			<a href="https://steamcommunity.com/id/ion606/" class="link fade-in"
+				>Steam</a
+			>
+			<a href="/" class="link fade-in home-button">🏠</a>
+		</div>
+		<div class="ripple-background">
+			<div class="circle xxlarge shade1"></div>
+			<div class="circle xlarge shade2"></div>
+			<div class="circle large shade3"></div>
+			<div class="circle mediun shade4"></div>
+			<div class="circle small shade5"></div>
+		</div>
+	</body>
 </html>
