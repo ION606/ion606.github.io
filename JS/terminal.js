@@ -138,6 +138,12 @@ class TerminalFS {
 		};
 
 		this.files = {
+			"/home/guest": `
+Welcome, Guest!
+
+Feel free to explore our terminal. Enjoy the interactive experience, and don't hesitate to check out the projects and fun files. 
+Have a great time!
+`,
 			"/home/ion606/todo.txt": `
 1. Take over the world
 2. Make coffee ☕
@@ -375,6 +381,124 @@ Boot sequence: 🕺💃🪩
             <li><strong>run [file]</strong> - Run a file (e.g., .exe)</li>
         </ul>`,
 
+		mkdir: (dirName) => {
+			const newpath = this.resolvePath(dirName);
+			if (this.fs[newpath]) return `Directory exists!`;
+
+			this.fs[newpath] = {
+				type: "dir",
+				children: [],
+			}
+
+			return `Created ${dirName}`;
+		},
+
+		rm: (fname) => {
+			if (!fname) return "please provide a file/folder to remove";
+
+			const fpath = this.resolvePath(fname),
+				strplit = fpath.split('/').filter(Boolean),
+				dirName = strplit.length > 1 ? strplit.slice(0, -1).join('/') : `/${strplit[0]}`
+
+			if (!dirName) return `file or folder "${fpath}" not found!`
+
+			// dir
+			if (this.fs[fpath]) {
+				for (const file of this.fs[fpath]?.children) {
+					delete this.files[this.resolvePath(file)];
+				}
+
+				if (fpath != '/') {
+					const parentDir = fpath.substring(0, fpath.lastIndexOf('/') + 1);
+
+					if (this.fs[parentDir]) {
+						this.fs[parentDir].children = this.fs[parentDir].children.filter(f => f !== fname);
+					}
+				}
+
+				delete this.fs[dirName];
+				return "removing folder";
+			}
+			// file
+			else if (this.files[fpath]) {
+				this.fs[`/${dirName}`].children = this.fs[`/${dirName}`].children.filter(c => c !== fname);
+				delete this.files[fpath];
+
+				return "removing file";
+			}
+
+
+			return `File "${fpath}" not found!`;
+		},
+
+		vi: (fname) => {
+			const newpath = this.resolvePath(fname);
+			if (!this.fs[newpath]) {
+				let dirName = newpath.split('/').slice(0, -1).join('/') || "/";
+
+				if (!this.fs[dirName]) return `path "${dirName}" not found!`;
+				this.fs[dirName].children.push(fname);
+			}
+
+			// Create editor overlay
+			let editorOverlay = document.getElementById("vi-editor-overlay");
+			if (editorOverlay) editorOverlay.remove();
+
+			editorOverlay = document.createElement("div");
+			editorOverlay.id = "vi-editor-overlay";
+			editorOverlay.className = "vi-editor-overlay";
+
+			const editorBox = document.createElement("div");
+			editorBox.className = "vi-editor-box";
+
+			const title = document.createElement("div");
+			title.textContent = `vi — ${fname}`;
+			title.className = "vi-editor-title";
+
+			const textarea = document.createElement("textarea");
+			textarea.value = this.files[newpath] || "";
+			textarea.className = "vi-editor-textarea";
+
+			const btnRow = document.createElement("div");
+			btnRow.className = "vi-editor-btnrow";
+
+			const saveBtn = document.createElement("button");
+			saveBtn.textContent = "Save & Exit";
+			saveBtn.className = "vi-editor-savebtn";
+			saveBtn.onclick = () => {
+				this.files[newpath] = textarea.value;
+				document.body.removeChild(editorOverlay);
+				const consoleOutput = document.querySelector(".consoleout");
+				consoleOutput.innerHTML += `<div>Saved <b>${fname}</b>!</div>`;
+			};
+
+			const cancelBtn = document.createElement("button");
+			cancelBtn.textContent = "Cancel";
+			cancelBtn.className = "vi-editor-cancelbtn";
+			cancelBtn.onclick = () => {
+				document.body.removeChild(editorOverlay);
+			};
+
+			btnRow.append(saveBtn, cancelBtn);
+			editorBox.append(title, textarea, btnRow);
+			editorOverlay.appendChild(editorBox);
+			document.body.appendChild(editorOverlay);
+
+			// Focus textarea
+			setTimeout(() => textarea.focus(), 100);
+
+			// ESC closes editor
+			const escListener = (e) => {
+				if (e.key === "Escape") {
+					cancelBtn.click();
+				}
+			};
+			editorOverlay.addEventListener("keydown", escListener);
+			textarea.addEventListener("keydown", (e) => e.stopPropagation());
+
+			return `<span style="color:#7c3aed">Opened editor for <b>${fname}</b>. Press ESC or Cancel to exit.</span>`;
+		},
+
 		exit: devConsoleToggle,
 
 		theme: (arg) => {
@@ -424,7 +548,7 @@ Boot sequence: 🕺💃🪩
 			const colors = ["#ff4081", "#7c3aed", "#4f46e5", "#00ff88"];
 			document.body.style.color =
 				colors[Math.floor(Math.random() * colors.length)];
-			return "🌈 Color chaos activated!";
+			return "🌈 Color changed!";
 		},
 
 		secret: () => {
@@ -434,7 +558,6 @@ Boot sequence: 🕺💃🪩
 
 		run: (filePath) => {
 			const absPath = terminalFS.resolvePath(filePath.trim());
-			console.log(absPath, filePath);
 
 			// Project links
 			if (
