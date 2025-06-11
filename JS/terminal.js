@@ -133,7 +133,7 @@ class TerminalFS {
 			},
 			"/sys": {
 				type: "dir",
-				children: ["self-destruct.exe", "disco-bootloader"],
+				children: ["self-destruct.exe", "disco-bootloader", 'virus.exe'],
 			},
 		};
 
@@ -221,7 +221,7 @@ Black Hole Simulator
 
 A physics simulation of black holes and gravitational lensing.
 `,
-			"/projects/virus.exe": `
+			"/sys/virus.exe": `
 VIRUS.EXE
 
 WARNING: This file is highly suspicious. Running it may cause unexpected behavior!
@@ -372,12 +372,15 @@ Boot sequence: 🕺💃🪩
             <li><strong>ls [path]</strong> - List directory contents</li>
             <li><strong>cd [path]</strong> - Change directory</li>
             <li><strong>cat [file]</strong> - Display file content</li>
+            <li><strong>vi [file]</strong> - Edit or create a file in a simple editor</li>
+            <li><strong>mkdir [dir]</strong> - Create a new directory</li>
+            <li><strong>rm [file/dir]</strong> - Remove a file or directory</li>
             <li><strong>theme day/night</strong> - Switch between day/night modes</li>
             <li><strong>background [ocean/sunset/forest]</strong> - Set a new background gradient (or reset with no valid argument)</li>
             <li><strong>ufo</strong> - Launch UFO animation</li>
             <li><strong>starfield</strong> - Regenerate stars</li>
             <li><strong>random</strong> - Activate random color chaos!</li>
-            <li><strong>secret</strong> - Activate disco mode!</li>
+            <li><strong>secret</strong> - :3</li>
             <li><strong>run [file]</strong> - Run a file (e.g., .exe)</li>
         </ul>`,
 
