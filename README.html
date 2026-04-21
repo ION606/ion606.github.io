@@ -1,631 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ION606 - Portfolio</title>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-		<link rel="stylesheet" href="/CSS/README.css" />
 
-		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ION606 - Portfolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<link rel="stylesheet" href="/CSS/README.css" />
 
-		<!-- load pixi.js first -->
-		<script src="https://cdn.jsdelivr.net/npm/pixi.js/dist/browser/pixi.min.js"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-		<!-- then load the UMD bundle of pixi-filters -->
-		<script src="https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/browser/pixi-filters.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/pixi.js-legacy/dist/pixi-legacy.min.js"></script>
+	<!-- load pixi.js first -->
+	<script src="https://cdn.jsdelivr.net/npm/pixi.js/dist/browser/pixi.min.js"></script>
 
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const loadScript = (src) => {
-					const script = document.createElement("script");
-					script.src = src;
-					document.head.appendChild(script);
-				};
+	<!-- then load the UMD bundle of pixi-filters -->
+	<script src="https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/browser/pixi-filters.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/pixi.js-legacy/dist/pixi-legacy.min.js"></script>
 
-				loadScript("/JS/README.js");
-				loadScript("/JS/glitch.js");
-				loadScript("/JS/terminal.js");
-			});
-		</script>
-	</head>
-	<body>
-		<!-- dynamic starfield container (appended via js) -->
-		<div id="starfield"></div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const loadScript = (src) => {
+				const script = document.createElement("script");
+				script.src = src;
+				document.head.appendChild(script);
+			};
 
-		<div class="container">
-			<nav>
-				<a href="/">home</a>
-				<a href="/README">readme</a>
-				<a href="/projects">projects</a>
-				<a href="/links">links</a>
-			</nav>
+			loadScript("/JS/README.js");
+			loadScript("/JS/glitch.js");
+			loadScript("/JS/terminal.js");
+		});
+	</script>
+</head>
 
-			<section class="hero">
-				<h1>
-					<span style="-webkit-text-fill-color: white">🌍</span> good
-					timezone! I'm ION606
-				</h1>
-				<p
-					class="typing-text"
-					data-text="A grad student exploring neural networks, data analysis, procedural animation, and system programming"></p>
-			</section>
+<body>
+	<!-- dynamic starfield container (appended via js) -->
+	<div id="starfield"></div>
 
-			<!-- about section -->
-			<section class="section">
-				<h2>🎨 about me</h2>
-				<ul class="about-list">
-					<li>
-						🔭 currently working on
-						<a
-							href="https://github.com/ION606/bluesky-client"
-							target="_blank"
-							>my bluesky client</a
-						>
-						and
-						<a
-							href="https://github.com/ION-WorkoutApp"
-							target="_blank"
-							>my workout app</a
-						>
-					</li>
-					<li>
-						🌱 currently studying
-						<strong
-							>neural networks, data analysis, procedural
-							animation, redis</strong
-						>
-					</li>
-					<li>
-						💬 ask me about
-						<strong
-							>express.js, web design, or kernel-level
-							operations</strong
-						>
-					</li>
-					<li>
-						📫 reach me at
-						<a href="mailto:ion606@protonmail.com"
-							>ion606@protonmail.com</a
-						>
-					</li>
-					<li>
-						⚡ fun fact:
-						<strong
-							>i still enjoy creating with gamemaker studio
-							2</strong
-						>
-						for fun side projects
-					</li>
-				</ul>
-			</section>
+	<div class="container">
+		<nav>
+			<a href="/">home</a>
+			<a href="/README">readme</a>
+			<a href="/projects">projects</a>
+			<a href="/links">links</a>
+		</nav>
 
-			<!-- technologies & tools section -->
-			<section class="section">
-				<h2>🛠️ technologies & tools</h2>
+		<section class="hero">
+			<h1>
+				<span style="-webkit-text-fill-color: white">🌍</span> good
+				timezone! I'm ION606
+			</h1>
+			<p class="typing-text"
+				data-text="I do stuff with Kubernetes, neural networks, data analysis, and system programming"></p>
+		</section>
 
-				<!-- Programming Languages -->
-				<h3 class="category-title">Programming Languages</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
-							alt="C" />
-						<span>c</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-							alt="C++" />
-						<span>c++</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-							alt="C#" />
-						<span>c#</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-							alt="Python" />
-						<span>python</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-							alt="Java" />
-						<span>java</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-							alt="JavaScript" />
-						<span>javascript</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-							alt="TypeScript" />
-						<span>typescript</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg"
-							alt="Solidity" />
-						<span>solidity</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
-							alt="Swift" />
-						<span>swift</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
-							alt="Kotlin" />
-						<span>kotlin</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-							alt="Dart" />
-						<span>dart</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
-							alt="Go" />
-						<span>go</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg"
-							alt="Rust" />
-						<span>rust</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg"
-							alt="Ruby" />
-						<span>ruby</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-							alt="PHP" />
-						<span>php</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg"
-							alt="Haskell" />
-						<span>haskell</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg"
-							alt="Erlang" />
-						<span>erlang</span>
-					</div>
+		<!-- about section -->
+		<section class="section">
+			<h2>🎨 about me</h2>
+			<ul class="about-list">
+				<li>
+					🔭 currently building: population health tooling at
+					<strong><a href="https://vidalens.org" target="_blank">Vidalens</a></strong>,
+					workflow automation and quality control using machine learning at
+					<strong><a href="https://cribrum.dev" target="_blank">Cribrum Software</a></strong>,
+					and screaming at Kubernetes clusters (it's fine, everything is fine)
+				</li>
+				<li>
+					🎓 grad research:
+					<strong>NLP, Computer Vision, and CNNs</strong>
+					- because skynet won't build itself!
+				</li>
+				<li>
+					🏥 professionally: building ML-driven workflow automation at
+					<strong><a href="https://cribrum.dev" target="_blank">Cribrum Software</a></strong>
+					and population health platforms at
+					<strong><a href="https://vidalens.org" target="_blank">Vidalens</a></strong>
+				</li>
+				<li>
+					🛠️ side quest:
+					<strong><a href="https://github.com/ION606/ION-Lang" target="_blank">ION-Lang</a></strong>
+					- I WANT FORKING IN JAVASCRIPT
+				</li>
+				<li>
+					💬 ask me about
+					<strong>Kubernetes (Minikube is awesome!), database schemas (the fun kind), kernel-level operations,
+						or machine learning stuff (not tensors, anything but tensors)</strong>
+				</li>
+				<li>
+					📫 reach me at
+					<a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a>
+				</li>
+				<li>
+					⚡ fun fact:
+					<strong>i still enjoy creating with gamemaker studio 2</strong>
+					for fun side projects
+				</li>
+			</ul>
+		</section>
+
+		<!-- what I'm actually building section -->
+		<section class="section">
+			<h2>🚧 what I'm actually building</h2>
+			<table class="projects-table">
+				<thead>
+					<tr>
+						<th>Project</th>
+						<th>Domain</th>
+						<th>Vibe</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="https://cribrum.dev" target="_blank">Cribrum Software</a></td>
+						<td>ML Automation / Kubernetes</td>
+						<td>Workflow automation and QC orchestrated via k8s</td>
+					</tr>
+					<tr>
+						<td><a href="https://vidalens.org" target="_blank">Vidalens Platform</a></td>
+						<td>Population Health</td>
+						<td>Population health tooling and clinical data platforms</td>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/ION606/ION-Lang" target="_blank">ION-Lang</a></td>
+						<td>Compiler Design / Systems</td>
+						<td>Lexer → Parser → AST → something that runs</td>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/ION606/bluesky-client" target="_blank">Bluesky Client</a></td>
+						<td>Decentralized Social / AT Protocol</td>
+						<td>Real-time feeds, media handling, post composers</td>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/ION-WorkoutApp" target="_blank">Workout App</a></td>
+						<td>Health Tech / Full-Stack</td>
+						<td>From spreadsheets to 1RM projections and progress viz</td>
+					</tr>
+					<tr>
+						<td><a href="https://github.com/ION606" target="_blank">Proto-Chat</a></td>
+						<td>Real-time Comms</td>
+						<td>Socket.io, presence, the whole Discord-clone pipeline</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- technologies & tools section -->
+		<section class="section">
+			<h2>🛠️ technologies & tools</h2>
+
+			<!-- Programming Languages -->
+			<h3 class="category-title">Programming Languages</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+					<span>c</span>
 				</div>
-
-				<!-- Frontend Development -->
-				<h3 class="category-title">Frontend Development</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-							alt="CSS3" />
-						<span>css3</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-							alt="HTML5" />
-						<span>html5</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://github.com/ION606/ION606/assets/58801387/866962dd-ad92-42f6-ba56-be50125f09c6"
-							alt="Bootstrap" />
-						<span>bootstrap</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-							alt="Vue.js" />
-						<span>vue.js</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-							alt="React" />
-						<span>react</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+						alt="C++" />
+					<span>c++</span>
 				</div>
-
-				<!-- Backend Development -->
-				<h3 class="category-title">Backend Development</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.16.0/icons/django/django-plain.svg"
-							alt="Django" />
-						<span>django</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-							alt="Express.js" />
-						<span>express.js</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-							alt="Node.js" />
-						<span>node.js</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://github.com/ION606/ION606/assets/58801387/880c324c-fc69-403c-8453-1c9630558c7f"
-							alt="Flask" />
-						<span>flask</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
-							alt="FastAPI" />
-						<span>fastapi</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
-							alt="GraphQL" />
-						<span>graphql</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+					<span>c#</span>
 				</div>
-
-				<!-- Frameworks & Cloud -->
-				<h3 class="category-title">Frameworks & Cloud</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-							alt="Docker" />
-						<span>docker</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-							alt="Kubernetes" />
-						<span>kubernetes</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-							alt="AWS" />
-						<span>aws</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
-							alt="Nginx" />
-						<span>nginx</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"
-							alt="Podman" />
-						<span>podman</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
-							alt="Vercel" />
-						<span>vercel</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+						alt="Python" />
+					<span>python</span>
 				</div>
-
-				<!-- Machine Learning -->
-				<h3 class="category-title">Machine Learning (ML)</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-							alt="Scikit-learn" />
-						<span>scikit-learn</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg"
-							alt="TensorFlow" />
-						<span>tensorflow</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+					<span>java</span>
 				</div>
-
-				<!-- Database -->
-				<h3 class="category-title">Database</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
-							alt="Firebase" />
-						<span>firebase</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
-							alt="MongoDB" />
-						<span>mongodb</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
-							alt="MSSQL" />
-						<span>mssql</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
-							alt="MySQL" />
-						<span>mysql</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-							alt="PostgreSQL" />
-						<span>postgresql</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-							alt="Redis" />
-						<span>redis</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
-							alt="SQLite" />
-						<span>sqlite</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+						alt="JavaScript" />
+					<span>javascript</span>
 				</div>
-
-				<!-- Tools & APIs -->
-				<h3 class="category-title">Tools & APIs</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-							alt="Git" />
-						<span>git</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-							alt="GitHub" />
-						<span>github</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
-							alt="Selenium" />
-						<span>selenium</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg"
-							alt="Puppeteer" />
-						<span>puppeteer</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
-							alt="OpenCV" />
-						<span>opencv</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vagrant/vagrant-original.svg"
-							alt="Vagrant" />
-						<span>vagrant</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg"
-							alt="Gradle" />
-						<span>gradle</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+						alt="TypeScript" />
+					<span>typescript</span>
 				</div>
-
-				<!-- Software -->
-				<h3 class="category-title">Software</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-							alt="Arduino" />
-						<span>arduino</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg"
-							alt="Heroku" />
-						<span>heroku</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-							alt="Linux" />
-						<span>linux</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png"
-							alt="Matlab" />
-						<span>matlab</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
-							alt="Raspberry Pi" />
-						<span>raspberry pi</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg"
+						alt="Solidity" />
+					<span>solidity</span>
 				</div>
-
-				<!-- Frameworks -->
-				<h3 class="category-title">Frameworks</h3>
-				<div class="tech-grid">
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg"
-							alt="DotNet" />
-						<span>dotnet</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg"
-							alt="Electron" />
-						<span>electron</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://github.com/ION606/ION606/assets/58801387/ffeb5f73-1d02-46a4-9595-b21532b6c62d"
-							alt="Next.js" />
-						<span>next.js</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
-							alt="React" />
-						<span>react</span>
-					</div>
-					<div class="tech-card">
-						<img
-							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/puppeteer/puppeteer-original.svg"
-							alt="Puppeteer" />
-						<span>puppeteer</span>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+						alt="Swift" />
+					<span>swift</span>
 				</div>
-			</section>
-
-			<!-- github stats section -->
-			<section class="section">
-				<h2>📊 github stats</h2>
-				<div class="stats-container">
-					<div id="top-langs-stat">
-						<img
-							src="https://github-readme-stats.vercel.app/api/top-langs/?username=ion606&layout=compact&theme=tokyonight" />
-					</div>
-					<img
-						src="https://github-readme-stats.vercel.app/api?username=ion606&show_icons=true&theme=midnight-purple&hide_border=true"
-						alt="github stats" />
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+						alt="Kotlin" />
+					<span>kotlin</span>
 				</div>
-			</section>
-
-			<!-- contact section -->
-			<section class="section">
-				<h2>📫 Contact Me</h2>
-				<div class="content">
-					<p>
-						📧
-						<a href="mailto:ion606@protonmail.com"
-							>ion606@protonmail.com</a
-						>
-					</p>
-
-					<div class="profile-views">
-						number of cute people who have viewed my profile<br />
-						<img
-							src="https://profile-counter.glitch.me/ion606/count.svg"
-							alt="profile views" />
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
+					<span>dart</span>
 				</div>
-			</section>
-
-			<!-- Connect with Me section from README.md -->
-			<section class="section">
-				<h2>🔗 Connect with Me</h2>
-				<div class="content">
-					<div class="connect-grid">
-						<a href="https://dev.to/ion606" target="_blank">
-							<img
-								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg"
-								alt="Dev.to"
-								height="30"
-								width="40" />
-						</a>
-						<a
-							href="https://stackoverflow.com/users/13159393/ion606"
-							target="_blank">
-							<img
-								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg"
-								alt="Stack Overflow"
-								height="30"
-								width="40" />
-						</a>
-						<a
-							href="https://www.buymeacoffee.com/ION606"
-							target="_blank">
-							<img
-								src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-								height="50"
-								width="210"
-								alt="Buy Me A Coffee" />
-						</a>
-						<a href="https://ko-fi.com/ION606" target="_blank">
-							<img
-								src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
-								height="50"
-								width="210"
-								alt="Ko-fi" />
-						</a>
-					</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" />
+					<span>go</span>
 				</div>
-			</section>
-
-			<div id="lol" style="display: none; text-align: center">
-				wouldn't you like to know lol
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust" />
+					<span>rust</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby" />
+					<span>ruby</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+					<span>php</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg"
+						alt="Haskell" />
+					<span>haskell</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg"
+						alt="Erlang" />
+					<span>erlang</span>
+				</div>
 			</div>
 
-			<p class="active-modules">
-				<span id="moduleTitle">active modules:</span> [
-				<span class="module" onclick="createStars()">starfield</span>,
-				<span class="module" onclick="launchUFO()">ufo</span>,
-				<span class="module" onclick="devConsoleToggle()"
-					>developer console</span
-				>,
-				<span class="module" onclick="typewriterEffect()"
-					>typewriter effect</span
-				>,
-				<span class="module" onclick="createParticleEffect()"
-					>particle scroll</span
-				>,
-				<span class="module" onclick="triggerEasterEggsReal()"
-					>easter eggs</span
-				>
-				]
-			</p>
+			<!-- Frontend Development -->
+			<h3 class="category-title">Frontend Development</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+					<span>css3</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+						alt="HTML5" />
+					<span>html5</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://github.com/ION606/ION606/assets/58801387/866962dd-ad92-42f6-ba56-be50125f09c6"
+						alt="Bootstrap" />
+					<span>bootstrap</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+						alt="Vue.js" />
+					<span>vue.js</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+						alt="React" />
+					<span>react</span>
+				</div>
+			</div>
+
+			<!-- Backend Development -->
+			<h3 class="category-title">Backend Development</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.16.0/icons/django/django-plain.svg"
+						alt="Django" />
+					<span>django</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+						alt="Express.js" />
+					<span>express.js</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+						alt="Node.js" />
+					<span>node.js</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://github.com/ION606/ION606/assets/58801387/880c324c-fc69-403c-8453-1c9630558c7f"
+						alt="Flask" />
+					<span>flask</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+						alt="FastAPI" />
+					<span>fastapi</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
+						alt="GraphQL" />
+					<span>graphql</span>
+				</div>
+			</div>
+
+			<!-- Frameworks & Cloud -->
+			<h3 class="category-title">Frameworks & Cloud</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+						alt="Docker" />
+					<span>docker</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+						alt="Kubernetes" />
+					<span>kubernetes</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+						alt="AWS" />
+					<span>aws</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+						alt="Nginx" />
+					<span>nginx</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/podman/podman-original.svg"
+						alt="Podman" />
+					<span>podman</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+						alt="Vercel" />
+					<span>vercel</span>
+				</div>
+			</div>
+
+			<!-- Machine Learning -->
+			<h3 class="category-title">Machine Learning (ML)</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+						alt="Scikit-learn" />
+					<span>scikit-learn</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="TensorFlow" />
+					<span>tensorflow</span>
+				</div>
+			</div>
+
+			<!-- Database -->
+			<h3 class="category-title">Database</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
+						alt="Firebase" />
+					<span>firebase</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
+						alt="MongoDB" />
+					<span>mongodb</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="MSSQL" />
+					<span>mssql</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
+						alt="MySQL" />
+					<span>mysql</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+						alt="PostgreSQL" />
+					<span>postgresql</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+						alt="Redis" />
+					<span>redis</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite" />
+					<span>sqlite</span>
+				</div>
+			</div>
+
+			<!-- Tools & APIs -->
+			<h3 class="category-title">Tools & APIs</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+					<span>git</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+						alt="GitHub" />
+					<span>github</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
+						alt="Selenium" />
+					<span>selenium</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg"
+						alt="Puppeteer" />
+					<span>puppeteer</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+						alt="OpenCV" />
+					<span>opencv</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vagrant/vagrant-original.svg"
+						alt="Vagrant" />
+					<span>vagrant</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg"
+						alt="Gradle" />
+					<span>gradle</span>
+				</div>
+			</div>
+
+			<!-- Software -->
+			<h3 class="category-title">Software</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+						alt="Arduino" />
+					<span>arduino</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg"
+						alt="Heroku" />
+					<span>heroku</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+						alt="Linux" />
+					<span>linux</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="Matlab" />
+					<span>matlab</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
+						alt="Raspberry Pi" />
+					<span>raspberry pi</span>
+				</div>
+			</div>
+
+			<!-- Frameworks -->
+			<h3 class="category-title">Frameworks</h3>
+			<div class="tech-grid">
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg"
+						alt="DotNet" />
+					<span>dotnet</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg"
+						alt="Electron" />
+					<span>electron</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://github.com/ION606/ION606/assets/58801387/ffeb5f73-1d02-46a4-9595-b21532b6c62d"
+						alt="Next.js" />
+					<span>next.js</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+						alt="React" />
+					<span>react</span>
+				</div>
+				<div class="tech-card">
+					<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/puppeteer/puppeteer-original.svg"
+						alt="Puppeteer" />
+					<span>puppeteer</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- github stats section -->
+		<section class="section">
+			<h2>📊 github stats</h2>
+			<div class="stats-container">
+				<div id="top-langs-stat">
+					<img
+						src="https://github-readme-stats.vercel.app/api/top-langs/?username=ion606&layout=compact&theme=tokyonight" />
+				</div>
+				<img src="https://github-readme-stats.vercel.app/api?username=ion606&show_icons=true&theme=midnight-purple&hide_border=true"
+					alt="github stats" />
+			</div>
+		</section>
+
+		<!-- contact section -->
+		<section class="section">
+			<h2>📫 Contact Me</h2>
+			<div class="content">
+				<p>
+					📧
+					<a href="mailto:ion606@protonmail.com">ion606@protonmail.com</a>
+				</p>
+
+				<div class="profile-views">
+					number of cute people who have viewed my profile<br />
+					<img src="https://profile-counter.glitch.me/ion606/count.svg" alt="profile views" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Connect with Me section from README.md -->
+		<section class="section">
+			<h2>🔗 Connect with Me</h2>
+			<div class="content">
+				<div class="connect-grid">
+					<a href="https://dev.to/ion606" target="_blank">
+						<img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg"
+							alt="Dev.to" height="30" width="40" />
+					</a>
+					<a href="https://stackoverflow.com/users/13159393/ion606" target="_blank">
+						<img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg"
+							alt="Stack Overflow" height="30" width="40" />
+					</a>
+					<a href="https://www.buymeacoffee.com/ION606" target="_blank">
+						<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210"
+							alt="Buy Me A Coffee" />
+					</a>
+					<a href="https://ko-fi.com/ION606" target="_blank">
+						<img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="Ko-fi" />
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<div id="lol" style="display: none; text-align: center">
+			wouldn't you like to know lol
 		</div>
 
-		<script>
-			const triggerEasterEggsReal = () => {
-				const lol = document.querySelector("#lol");
-				lol.style.display = "block";
+		<p class="active-modules">
+			<span id="moduleTitle">active modules:</span> [
+			<span class="module" onclick="createStars()">starfield</span>,
+			<!-- <span class="module" onclick="launchUFO()">ufo</span>, -->
+			<span class="module" onclick="devConsoleToggle()">developer console</span>,
+			<span class="module" onclick="typewriterEffect()">typewriter effect</span>,
+			<span class="module" onclick="createParticleEffect()">particle scroll</span>,
+			<span class="module" onclick="triggerEasterEggsReal()">easter eggs</span>
+			]
+		</p>
+	</div>
 
-				setTimeout(() => {
-					lol.style.display = "none";
-				}, 3000);
-			};
-		</script>
+	<script>
+		const triggerEasterEggsReal = () => {
+			const lol = document.querySelector("#lol");
+			lol.style.display = "block";
 
-		<!-- hidden developer console -->
-		<div id="dev-console">
-			<input type="text" placeholder="enter command..." />
-		</div>
-	</body>
+			setTimeout(() => {
+				lol.style.display = "none";
+			}, 3000);
+		};
+	</script>
+
+	<!-- hidden developer console -->
+	<div id="dev-console">
+		<input type="text" placeholder="enter command..." />
+	</div>
+</body>
+
 </html>
